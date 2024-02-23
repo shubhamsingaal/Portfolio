@@ -13,7 +13,7 @@ const Main = () => {
             LET&#39;S BUILD SOMETHING TOGETHER
           </p>
           <h1 className='py-4 text-gray-700'>
-            Hi, I&#39;m <span className='text-[#5651e5]'> Clint</span>
+            Hi, I&#39;m <span className='text-[#5651e5]'> Shubham</span>
           </h1>
           <h1 className='py-2 text-gray-700'>A Front-End Web Developer</h1>
           <p className='py-4 text-gray-600 sm:max-w-[70%] m-auto'>
@@ -31,7 +31,7 @@ const Main = () => {
               </div>
             </a>
             <a
-              href='https://github.com/fireclint'
+              href='https://github.com/shubhamsingaal'
               target='_blank'
               rel='noreferrer'
             >

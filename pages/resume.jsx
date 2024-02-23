@@ -6,7 +6,7 @@ const resume = () => {
   return (
     <>
       <Head>
-        <title>Clint | Resume</title>
+        <title>Shubham | Resume</title>
         <meta
           name='description'
           content='I’m a front-end web developer specializing in building (and occasionally designing) exceptional digital experiences.'
@@ -17,17 +17,17 @@ const resume = () => {
       <div className='max-w-[940px] mx-auto p-2 pt-[120px]'>
         <h2 className='text-center'>Resume</h2>
         <div className='bg-[#d0d4d6] my-4 p-4 w-full flex justify-between items-center'>
-          <h2 className='text-center'>Clint Briley</h2>
+          <h2 className='text-center'>Shubham Kumar</h2>
           <div className='flex'>
             <a
-              href='https://www.linkedin.com/in/clint-briley-50056920a/'
+              href='https://www.linkedin.com/in/shubhamsingaal/'
               target='_blank'
               rel='noreferrer'
             >
               <FaLinkedinIn size={20} style={{ marginRight: '1rem' }} />
             </a>
             <a
-              href='https://github.com/fireclint'
+              href='https://github.com/shubhamsingaal'
               target='_blank'
               rel='noreferrer'
             >
@@ -92,11 +92,11 @@ const resume = () => {
         <div className='py-6'>
           <p className='italic'>
             <span className='font-bold italic'>
-            INFINITE TECH
+            ISTE NIT Durgapur
             </span>
-            <span className='px-2'>|</span>Dallas, TX
+            <span className='px-2'>|</span>Durgapur, India
           </p>
-          <p className='py-1 italic'>Front End Web Developer & Web Master (2013 - Current)</p>
+          <p className='py-1 italic'>Front End Web Developer & Event Coordinator</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
               Ensured comprehensive mobile responsive UI layouts with

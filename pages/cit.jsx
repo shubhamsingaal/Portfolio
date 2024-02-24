@@ -28,13 +28,13 @@ const cit = () => {
           <h2>Overview</h2>
           <p>
             The starting of college life was a turmoil, tons of events and
-            classes and a race for survival where a minute's denial can lead to
+            classes and a race for survival where a minute&apos;s denial can lead to
             unfortunate consequences in a stampede. To every parents question
-            which goes like, "Kya? Kuch soche ho?", we remain unanswerable. Torn
+            which goes like, &quot;Kya? Kuch soche ho?&quot;, we remain unanswerable. Torn
             between the scopes that engineering provides us, we all do deserve a
             trailer, a guide to what those competitive exams look like! ISTE
-            Students' Chapter NIT Durgapur, presents you the seventh edition of
-            its Annual Flagship Event, a journey to explore the "what-ifs" of
+            Students&apos; Chapter NIT Durgapur, presents you the seventh edition of
+            its Annual Flagship Event, a journey to explore the &quot;what-ifs&quot; of
             your career. Take a venture around the complexities of exams like
             CAT and unleash your intelligence in COGNITIVE INTELLIGENCE TEST 7.0
           </p>

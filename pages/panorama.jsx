@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
-import netflixImg from '../public/assets/projects/netflix.jpg';
+import panoramaImg from '../public/assets/projects/panorama.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
 
-const netflix = () => {
+const panorama = () => {
   return (
     <div className='w-full'>
       <div className='w-screen h-[50vh] relative'>
@@ -13,12 +13,12 @@ const netflix = () => {
           className='absolute z-1'
           layout='fill'
           objectFit='cover'
-          src={netflixImg}
+          src={panoramaImg}
           alt='/'
         />
         <div className='absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2'>
-          <h2 className='py-2'>Netflix App</h2>
-          <h3>React JS / Tailwind / Firebase</h3>
+          <h2 className='py-2'>Panorama | Quiz</h2>
+          <h3>React JS / Google Auth</h3>
         </div>
       </div>
 
@@ -27,47 +27,38 @@ const netflix = () => {
           <p>Project</p>
           <h2>Overview</h2>
           <p>
-            I built this application in React JS and is hosted on GitHub pages.
-            This app features user authentication with firebase as well as the
-            firestore cloud storage database. This application is pulling movie
-            data from an the IMDB movie API and displaying different categories.
-            It features horizontal sliding and a featured selection. The
-            useContext hook is also being implemented for app-wide state
-            management.
+            Successfully developed a feature-rich quiz website utilizing ReactJS and Firebase, achieving exceptional results. This project attracted an impressive 500+ participants. With the inclusion of time-limit quizzes and
+            topic-specific categories, user engagement soared, and the competitive spirit among users led to a remarkable 40%
+            increase in participation, creating an immersive and engaging experience.
           </p>
           <a
-            href='https://github.com/fireclint/netflix-react-tailwind'
+            href='https://space.panorama.istenitdgp.com/'
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4 mr-8'>Code</button>
+            <button className='px-8 py-2 mt-4 mr-8'>Demo</button>
           </a>
           <a
-            href='https://fireclint.github.io/netflix-react-tailwind/'
+            href='https://github.com/shubhamsingaal/Space-Odyssey'
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4'>Demo</button>
+            <button className='px-8 py-2 mt-4'>Code</button>
           </a>
+
         </div>
         <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4'>
           <div className='p-2'>
             <p className='text-center font-bold pb-2'>Technologies</p>
             <div className='grid grid-cols-3 md:grid-cols-1'>
               <p className='text-gray-600 py-2 flex items-center'>
-                <RiRadioButtonFill className='pr-1' /> React
-              </p>
-              <p className='text-gray-600 py-2 flex items-center'>
-                <RiRadioButtonFill className='pr-1' /> Tailwind
+                <RiRadioButtonFill className='pr-1' /> React JS
               </p>
               <p className='text-gray-600 py-2 flex items-center'>
                 <RiRadioButtonFill className='pr-1' /> Javascript
               </p>
               <p className='text-gray-600 py-2 flex items-center'>
-                <RiRadioButtonFill className='pr-1' /> Firebase
-              </p>
-              <p className='text-gray-600 py-2 flex items-center'>
-                <RiRadioButtonFill className='pr-1' /> IMDB API
+                <RiRadioButtonFill className='pr-1' /> Google Auth
               </p>
             </div>
           </div>
@@ -80,4 +71,4 @@ const netflix = () => {
   );
 };
 
-export default netflix;
+export default panorama;

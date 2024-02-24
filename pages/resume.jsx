@@ -126,10 +126,10 @@ const resume = () => {
             </span>
             <span className='px-2'>|</span>Durgapur, India
           </p>
-          <p className='py-1 italic'>ISTE Students' Chapter - NIT Durgapur (2021 - Current)</p>
+          <p className='py-1 italic'>ISTE Students&lsquo; Chapter - NIT Durgapur (2021 - Current)</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
-              As a senior member of ISTE Students' Chapter I have mentored over a group of 10+ students what I’ve learned in web development, specifically
+              As a senior member of ISTE Students&lsquo; Chapter I have mentored over a group of 10+ students what I’ve learned in web development, specifically
               front-end development.
             </li>
           </ul>

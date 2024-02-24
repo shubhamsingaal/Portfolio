@@ -5,7 +5,7 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 // import { useRouter } from 'next/router';
-import NavLogo from '../public/assets/navLogo.png'
+import NavLogo from '../public/assets/navLogo.jpeg'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -54,15 +54,15 @@ const Navbar = () => {
           : 'fixed w-full h-20 z-[100]'
       }
     >
-      <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
+      <div className='flex justify-between items-center w-full h-full px-5  2xl:px-16'>
         <Link href='/'>
           <a>
             <Image
               src={NavLogo}
               alt='/'
-              width='125'
-              height='50'
-              className='cursor-pointer'
+              width='47'
+              height='47'
+              className='cursor-pointer rounded-3xl '
             />
           </a>
         </Link>

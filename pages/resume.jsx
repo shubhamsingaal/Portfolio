@@ -103,17 +103,15 @@ const resume = () => {
               understanding of HTML, CSS, and JavaScript.
             </li>
             <li>
-              Troubleshoot issues and concerns, configure operation and analytic
-              plugins, and design changes as needed.
+              Developed a professional and engaging website that accurately reflects the organization’s brand identity and
+              values.
+
             </li>
             <li>
-              Worked directly with a diverse client base to understand and
-              implement multiple technologies and programs.
+              Implemented features such as user-friendly navigation menu, interactive sections, forms, and dynamic content.
+              Additionally, orchestrated a robust search engine optimization strategy, leading to a note-worthy 30% improvement in the organization’s online visibility and search engine rankings.
             </li>
-            <li>
-              Platform migration managing DNS servers as well as MX records and
-              ensuring a smooth migration process.
-            </li>
+           
           </ul>
         </div>
 

@@ -29,7 +29,7 @@ const auditions = () => {
           <p>
             Designed a cutting-edge auditions website that seamlessly streamlines the audition process,
             utilizing advanced web development skills. This platform has successfully attracted over 1500+ students, offering
-            them a user-friendly and efficient experience for their auditions.
+            them a user-friendly and efficient experience for their auditions. It is available in both dark and light mode.
           </p>
           <a
             href='https://github.com/shubhamsingaal/ISTE-Auditions-2023'

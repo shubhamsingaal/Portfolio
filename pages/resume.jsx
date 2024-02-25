@@ -2,7 +2,16 @@ import React from 'react';
 import Head from 'next/head';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
-const resume = () => {
+
+
+const ResumeLink = 'https://drive.google.com/file/d/1ojM4hI_Ucar2A2PcOTRj-k-oHIXlsO7E/view?usp=sharing'; 
+// Replace this with the actual path or URL of your PDF file
+
+  const Resume = () => {
+    const downloadResume = () => {
+      // You can customize the download logic here
+      window.open(ResumeLink, '_blank');
+    };
   return (
     <>
       <Head>
@@ -16,6 +25,14 @@ const resume = () => {
 
       <div className='max-w-[940px] mx-auto p-2 pt-[120px]'>
         <h2 className='text-center'>Resume</h2>
+        <div className='text-center py-4'>
+          <button
+            onClick={downloadResume}
+            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+          >
+            Download Resume
+          </button>
+        </div>
         <div className='bg-[#d0d4d6] my-4 p-4 w-full flex justify-between items-center'>
           <h2 className='text-center'>Shubham Kumar</h2>
           <div className='flex'>
@@ -157,4 +174,4 @@ const resume = () => {
   );
 };
 
-export default resume;
+export default Resume;

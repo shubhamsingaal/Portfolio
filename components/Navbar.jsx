@@ -62,7 +62,7 @@ const Navbar = () => {
               alt='/'
               width='47'
               height='47'
-              className='cursor-pointer rounded-3xl '
+              className='cursor-pointer  rounded-3xl '
             />
           </a>
         </Link>
@@ -119,9 +119,10 @@ const Navbar = () => {
                 <a>
                   <Image
                     src={NavLogo}
-                    width='87'
-                    height='35'
+                    width='47'
+                    height='47'
                     alt='/'
+                    className='rounded-3xl'
                   />
                 </a>
               </Link>

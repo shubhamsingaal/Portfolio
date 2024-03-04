@@ -1,19 +1,40 @@
 import Link from 'next/link';
 import React from 'react';
+import { motion } from 'framer-motion'; // Import motion from Framer Motion
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 const Main = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1.5 } }, // Set the duration for the container animation
+  };
+
+  const itemVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8 } }, // Set the duration for the item animations
+  };
+
   return (
-    <div id='home' className=' w-full h-[90vh] md:h-screen text-center'>
+    <motion.div
+      id='home'
+      className='w-full h-[90vh] md:h-screen text-center'
+      initial='hidden'
+      animate='visible'
+      variants={containerVariants}
+    >
       <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
-        <div className='mt-12 -mb-12 md:mt-8 md:mb-0'>
+        <motion.div
+          className='mt-12 -mb-12 md:mt-8 md:mb-0'
+          variants={itemVariants}
+        >
           <p className='uppercase text-sm tracking-widest text-gray-600'>
             LET&#39;S BUILD SOMETHING TOGETHER
           </p>
           <h1 className='py-4 text-gray-700'>
-            Hi, I&#39;m <span className='text-[#5651e5]'> Shubham</span>
+            Hi, I&#39;m{' '}
+            <span className='text-[#5651e5]'> Shubham</span>
           </h1>
           <h1 className='py-2 text-gray-700'>A Front-End Web Developer</h1>
           <p className='py-4 text-gray-600 sm:max-w-[70%] -mb-5 md:m-auto'>
@@ -26,33 +47,45 @@ const Main = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <motion.div
+                className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'
+                variants={itemVariants}
+              >
                 <FaLinkedinIn />
-              </div>
+              </motion.div>
             </a>
             <a
               href='https://github.com/shubhamsingaal'
               target='_blank'
               rel='noreferrer'
             >
-              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <motion.div
+                className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'
+                variants={itemVariants}
+              >
                 <FaGithub />
-              </div>
+              </motion.div>
             </a>
             <Link href='/#contact'>
-              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <motion.div
+                className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'
+                variants={itemVariants}
+              >
                 <AiOutlineMail />
-              </div>
+              </motion.div>
             </Link>
             <Link href='/resume'>
-              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <motion.div
+                className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'
+                variants={itemVariants}
+              >
                 <BsFillPersonLinesFill />
-              </div>
+              </motion.div>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

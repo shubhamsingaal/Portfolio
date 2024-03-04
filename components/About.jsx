@@ -1,13 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useAnimation } from 'framer-motion'; // Import motion from Framer Motion
 import AboutImg from '../public/assets/about.png';
 
 const About = () => {
+  const [isInView, setIsInView] = useState(false);
+  const controls = useAnimation();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const itemVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+  };
+  const imageVariants = {
+    hidden: { x: 0, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const element = document.getElementById('about');
+      if (element) {
+        const elementOffset = element.offsetTop;
+        const elementHeight = element.clientHeight;
+        const elementInView = scrollY >= elementOffset - window.innerHeight / 2 && scrollY <= elementOffset + elementHeight / 2;
+        if (elementInView) {
+          setIsInView(true);
+        }
+      }
+    };
+
+    controls.start(isInView ? 'visible' : 'hidden');
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInView, controls]);
+
   return (
-    <div id='about' className='w-full md:h-screen p-2 flex items-center py-16'>
-      <div className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'>
-        <div className='col-span-2'>
+    <motion.div
+      id='about'
+      className='w-full md:h-screen p-2 flex items-center py-16'
+      initial='hidden'
+      animate={controls}
+      variants={containerVariants}
+    >
+      <motion.div
+        className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'
+        variants={containerVariants}
+      >
+        <motion.div
+          className='col-span-2'
+          variants={itemVariants}
+        >
           <p className='uppercase text-xl tracking-widest text-[#5651e5]'>
             About
           </p>
@@ -29,19 +82,25 @@ const About = () => {
             specific language, but choosing the best tool for the job.
           </p>
           <p className='py-2 text-gray-600'>
-            
+
           </p>
           <Link href='/#projects'>
-            <p className='py-2 text-gray-600 underline cursor-pointer'>
+            <motion.p
+              className='py-2 text-gray-600 underline cursor-pointer'
+              variants={itemVariants}
+            >
               Check out some of my latest projects.
-            </p>
+            </motion.p>
           </Link>
-        </div>
-        <div className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
+        </motion.div>
+        <motion.div
+          className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'
+          variants={imageVariants}
+        >
           <Image src={AboutImg} className='rounded-xl' alt='/' />
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

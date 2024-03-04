@@ -14,7 +14,7 @@ const About = () => {
   };
 
   const itemVariants = {
-    hidden: { x: -50, opacity: 0 },
+    hidden: { x: 0, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
   };
   const imageVariants = {

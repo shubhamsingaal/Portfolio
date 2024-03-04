@@ -32,9 +32,23 @@ const Projects = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [controls, animationPlayed]);
 
+  const leftcontainerVariants = {
+    hidden: { x:-100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+  };
+
+  const rightcontainerVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1 },
+    visible: { opacity: 1,  },
+  };
+
+  const righttcontainerVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
   };
 
   const itemVariants = {
@@ -59,7 +73,7 @@ const Projects = () => {
           className='grid md:grid-cols-2 gap-8'
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants}>
+          <motion.div variants={leftcontainerVariants}>
             <ProjectItem
               title='Jk-Bros | Logistics'
               backgroundImg={jkbrosImg}
@@ -67,7 +81,7 @@ const Projects = () => {
               tech='React JS'
             />
           </motion.div>
-          <motion.div variants={itemVariants}>
+          <motion.div variants={rightcontainerVariants}>
             <ProjectItem
               title='CIT | ISTE'
               backgroundImg={citImg}
@@ -75,7 +89,7 @@ const Projects = () => {
               tech='Next JS'
             />
           </motion.div>
-          <motion.div variants={itemVariants}>
+          <motion.div variants={leftcontainerVariants}>
             <ProjectItem
               title='Auditions App'
               backgroundImg={auditionsImg}
@@ -83,7 +97,7 @@ const Projects = () => {
               tech='JavaScript'
             />
           </motion.div>
-          <motion.div variants={itemVariants}>
+          <motion.div variants={rightcontainerVariants}>
             <ProjectItem
               title='Panorama'
               backgroundImg={panoramaImg}

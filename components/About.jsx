@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion'; // Import motion from Framer Motion
-import AboutImg from '../public/assets/about.png';
+import AboutImg from '../public/assets/profile.jpg';
 
 const About = () => {
   const [isInView, setIsInView] = useState(false);

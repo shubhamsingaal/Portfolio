@@ -33,12 +33,12 @@ const Projects = () => {
   }, [controls, animationPlayed]);
 
   const leftcontainerVariants = {
-    hidden: { x:-100, opacity: 0 },
+    hidden: { x:-50, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
   };
 
   const rightcontainerVariants = {
-    hidden: { x: 100, opacity: 0 },
+    hidden: { x: 50, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
   };
   const containerVariants = {
@@ -46,16 +46,7 @@ const Projects = () => {
     visible: { opacity: 1,  },
   };
 
-  const righttcontainerVariants = {
-    hidden: { x: 100, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
-  };
-
+  
   return (
     <motion.div
       id='projects'

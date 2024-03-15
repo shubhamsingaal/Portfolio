@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
@@ -9,51 +9,29 @@ import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 import ContactImg from '../public/assets/contact.jpg';
 
 const Contact = () => {
-  const [animationPlayed, setAnimationPlayed] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById('contact');
-      if (element && !animationPlayed) {
-        const scrollY = window.scrollY;
-        const elementOffset = element.offsetTop;
-        const elementHeight = element.clientHeight;
-        const elementInView =
-          scrollY >= elementOffset - window.innerHeight / 2 &&
-          scrollY <= elementOffset + elementHeight / 2;
-
-        if (elementInView) {
-          setAnimationPlayed(true);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [animationPlayed]);
-
   const contactContainerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.5 } },
   };
 
   const leftBoxVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 3 } },
+    hidden: { opacity: 0 ,x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1} },
   };
+  
 
   const rightBoxVariants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 3 } },
+    hidden: { opacity: 0,x: 100 },
+    visible: { opacity: 1 ,x: 0, transition: { duration: 1} },
   };
 
   return (
     <motion.div
       variants={contactContainerVariants}
       initial="hidden"
-      animate={animationPlayed ? 'visible' : 'hidden'}
-      id="contact"
-      className="w-full lg:h-screen"
+      animate="visible"
+      id='contact'
+      className='w-full lg:h-screen'
     >
       <div className='max-w-[1240px] m-auto px-2 py-16 w-full '>
         <p className='text-xl tracking-widest uppercase text-[#5651e5]'>

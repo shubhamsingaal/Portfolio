@@ -7,14 +7,14 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 const Main = () => {
   const containerVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 50, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 1 } }, // Set the duration for the container animation
   };
 
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 1 } }, // Set the duration for the item animations
-  };
+  // const containerVariants = {
+  //   hidden: { y: 30, opacity: 0 },
+  //   visible: { y: 0, opacity: 1, transition: { duration: 1 } }, // Set the duration for the item animations
+  // };
 
   return (
     <motion.div
@@ -27,7 +27,7 @@ const Main = () => {
       <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
         <motion.div
           className='mt-12 -mb-12 md:mt-8 md:mb-0'
-          variants={itemVariants}
+          variants={containerVariants}
         >
           <p className='uppercase text-sm tracking-widest text-gray-600'>
             LET&#39;S BUILD SOMETHING TOGETHER
@@ -49,7 +49,7 @@ const Main = () => {
             >
               <motion.div
                 className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'
-                variants={itemVariants}
+                variants={containerVariants}
               >
                 <FaLinkedinIn />
               </motion.div>
@@ -61,7 +61,7 @@ const Main = () => {
             >
               <motion.div
                 className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'
-                variants={itemVariants}
+                variants={containerVariants}
               >
                 <FaGithub />
               </motion.div>
@@ -69,7 +69,7 @@ const Main = () => {
             <Link href='/#contact'>
               <motion.div
                 className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'
-                variants={itemVariants}
+                variants={containerVariants}
               >
                 <AiOutlineMail />
               </motion.div>
@@ -77,7 +77,7 @@ const Main = () => {
             <Link href='/resume'>
               <motion.div
                 className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'
-                variants={itemVariants}
+                variants={containerVariants}
               >
                 <BsFillPersonLinesFill />
               </motion.div>

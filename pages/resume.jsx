@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 
 
-const ResumeLink = 'https://drive.google.com/file/d/1ojM4hI_Ucar2A2PcOTRj-k-oHIXlsO7E/view?usp=sharing'; 
+const ResumeLink = 'https://drive.google.com/file/d/1Abgtz_yzaRIuMywE2UhnX1gSnozJ_SrU/view?usp=sharing'; 
 // Replace this with the actual path or URL of your PDF file
 
   const Resume = () => {

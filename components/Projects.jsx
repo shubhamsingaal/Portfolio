@@ -33,13 +33,13 @@ const Projects = () => {
   }, [controls, animationPlayed]);
 
   const leftcontainerVariants = {
-    hidden: { x:-50, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+    hidden: {  opacity: 0 },
+    visible: {  opacity: 1, transition: { duration: 1 } },
   };
 
   const rightcontainerVariants = {
-    hidden: { x: 50, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+    hidden: { opacity: 0 },
+    visible: {opacity: 1, transition: { duration: 1 } },
   };
   const containerVariants = {
     hidden: { opacity: 0 },

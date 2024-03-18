@@ -32,25 +32,25 @@ const Projects = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [controls, animationPlayed]);
 
-  const leftcontainerVariants = {
-    hidden: {  opacity: 0 },
-    visible: {  opacity: 1, transition: { duration: 1 } },
+  const leftContainerVariants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
   };
 
-  const rightcontainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {opacity: 1, transition: { duration: 1 } },
+  const rightContainerVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
   };
+
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1,  },
+    visible: { opacity: 1 },
   };
 
-  
   return (
     <motion.div
       id='projects'
-      className='w-full'
+      className='w-full overflow-x-hidden' // Add overflow-x-hidden here
       initial='hidden'
       animate={controls}
       variants={containerVariants}
@@ -64,7 +64,7 @@ const Projects = () => {
           className='grid md:grid-cols-2 gap-8'
           variants={containerVariants}
         >
-          <motion.div variants={leftcontainerVariants}>
+          <motion.div variants={leftContainerVariants}>
             <ProjectItem
               title='Jk-Bros | Logistics'
               backgroundImg={jkbrosImg}
@@ -72,7 +72,7 @@ const Projects = () => {
               tech='React JS'
             />
           </motion.div>
-          <motion.div variants={rightcontainerVariants}>
+          <motion.div variants={rightContainerVariants}>
             <ProjectItem
               title='CIT | ISTE'
               backgroundImg={citImg}
@@ -80,7 +80,7 @@ const Projects = () => {
               tech='Next JS'
             />
           </motion.div>
-          <motion.div variants={leftcontainerVariants}>
+          <motion.div variants={leftContainerVariants}>
             <ProjectItem
               title='Auditions App'
               backgroundImg={auditionsImg}
@@ -88,7 +88,7 @@ const Projects = () => {
               tech='JavaScript'
             />
           </motion.div>
-          <motion.div variants={rightcontainerVariants}>
+          <motion.div variants={rightContainerVariants}>
             <ProjectItem
               title='Panorama'
               backgroundImg={panoramaImg}

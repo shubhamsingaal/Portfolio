@@ -1,10 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { color } from 'framer-motion';
 
 
 
-const ResumeLink = 'https://drive.google.com/file/d/1Abgtz_yzaRIuMywE2UhnX1gSnozJ_SrU/view?usp=sharing'; 
+const ResumeLink = 'https://drive.google.com/file/d/1ojM4hI_Ucar2A2PcOTRj-k-oHIXlsO7E/view?usp=sharing'; 
 // Replace this with the actual path or URL of your PDF file
 
   const Resume = () => {
@@ -18,7 +19,7 @@ const ResumeLink = 'https://drive.google.com/file/d/1Abgtz_yzaRIuMywE2UhnX1gSnoz
         <title>Shubham | Resume</title>
         <meta
           name='description'
-          content='I’m a front-end web developer specializing in building (and occasionally designing) exceptional digital experiences.'
+          content='I’m a full stack web developer specializing in building (and occasionally designing) exceptional digital experiences.'
         />
         <link rel='icon' href='/fav.png' />
       </Head>
@@ -28,7 +29,7 @@ const ResumeLink = 'https://drive.google.com/file/d/1Abgtz_yzaRIuMywE2UhnX1gSnoz
         <div className='text-center py-4'>
           <button
             onClick={downloadResume}
-            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+            className='text-white font-bold py-2 px-4 rounded'
           >
             Download Resume
           </button>
@@ -66,15 +67,9 @@ const ResumeLink = 'https://drive.google.com/file/d/1Abgtz_yzaRIuMywE2UhnX1gSnoz
           </div>
         </div>
         <p>
-          Analytical, innovative, and motivated web development professional
-          with experience in customer service, team leadership, and
-          organizational effectiveness in fast-paced and challenging
-          environments. Adept at developing strategies and driving streamlined
-          operations. Diverse analytical skills, team collaboration, and
-          relationship building. Consummate professional, and motivated leader,
-          with solid interpersonal abilities and complex problem-solving skills.
-          Effective and proven track record of critical thinking, idea
-          generation, and optimizing efficiencies.
+        A dedicated and highly motivated undergraduate student eager to learn and work with diverse tech stacks and
+emerging technologies. Proficient in the MERN stack, with hands-on experience in developing dynamic, responsive
+web applications. Enthusiastic about taking on challenges and committed to continuous learning and growth.
         </p>
 
         {/* Skills */}
@@ -82,24 +77,21 @@ const ResumeLink = 'https://drive.google.com/file/d/1Abgtz_yzaRIuMywE2UhnX1gSnoz
           <h5 className='text-center underline text-[18px] py-2'>Skills</h5>
           <p className='py-2'>
             <span className='font-bold'>Technical Skills</span>
-            <span className='px-2'>|</span>Front-End Web Developer
-            <span className='px-2'>|</span> HTML
+            
+            <span className='px-2'>:</span> HTML
             <span className='px-2'>|</span>CSS
             <span className='px-2'>|</span>Javascript
-            <span className='px-2'>|</span>React
-            <span className='px-2'>|</span>Next JS
+            <span className='px-2'>|</span>ReactJs 
+            <span className='px-2'>|</span>NextJs
             <span className='px-2'>|</span>SQL
             <span className='px-2'>|</span>NoSQL
             <span className='px-2'>|</span>Redux
-            <span className='px-2'>|</span>Tailwind
+            <span className='px-2'>|</span>Tailwind CSS
             <span className='px-2'>|</span> Firebase
-            <span className='px-2'>|</span> RESTAPI
+            <span className='px-2'>|</span>Git & Github
+           
           </p>
-          <p className='py-2'>
-            <span className='font-bold'>Amazon Web Services</span>
-            <span className='px-2'>|</span>Amazon Web Services Cloud
-            Practitioner
-          </p>
+         
         </div>
 
         <h5 className='text-center underline text-[18px] py-4'>
@@ -109,46 +101,56 @@ const ResumeLink = 'https://drive.google.com/file/d/1Abgtz_yzaRIuMywE2UhnX1gSnoz
         <div className='py-6'>
           <p className='italic'>
             <span className='font-bold italic'>
-            ISTE NIT Durgapur
+            Coditioning
             </span>
-            <span className='px-2'>|</span>Durgapur, India
+            <span className='px-2'>|</span>London, UK - Remote
           </p>
-          <p className='py-1 italic'>Front End Web Developer & Event Coordinator</p>
+          <p className='py-1 italic'>AI Prompt Engineering Intern</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
-              Ensured comprehensive mobile responsive UI layouts with
-              understanding of HTML, CSS, and JavaScript.
+            Generated gamified version of DSA challenges and their solutions in multiple programming
+            languages.
             </li>
             <li>
-              Developed a professional and engaging website that accurately reflects the organization’s brand identity and
-              values.
+            Developed technical content in the software engineering domain to support student learning.
 
             </li>
             <li>
-              Implemented features such as user-friendly navigation menu, interactive sections, forms, and dynamic content.
-              Additionally, orchestrated a robust search engine optimization strategy, leading to a note-worthy 30% improvement in the organization’s online visibility and search engine rankings.
+            Conducted research and contributed to the gamification of educational content.
+            </li>
+            <li>
+            Assisted with quality control and proactively identified potential issues.
             </li>
            
           </ul>
         </div>
-
-
-        {/* Personal Experience */}
+        {/* Experience */}
         <div className='py-6'>
           <p className='italic'>
             <span className='font-bold italic'>
-              Teaching & Mentoring Web Development
+            ISTE Students’ Chapter NIT Durgpur
             </span>
             <span className='px-2'>|</span>Durgapur, India
           </p>
-          <p className='py-1 italic'>ISTE Students&lsquo; Chapter - NIT Durgapur (2021 - Current)</p>
+          <p className='py-1 italic'>Web & Tech Head </p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
-              As a senior member of ISTE Students&lsquo; Chapter I have mentored over a group of 10+ students what I’ve learned in web development, specifically
-              front-end development.
+            Developed various websites including <a style={{ color: 'green' }} href="https://www.istenitdgp.com/">ISTE NIT Durgapur</a>
+            , <a style={{ color: 'green' }} href="https://cit.istenitdgp.com/">CIT 7.0 </a>,
+            <a style={{ color: 'green' }} href="https://escape-room-game-d6308f.spheron.app/"> Adventure-alcove </a>, 
+            <a style={{ color: 'green' }} href="https://space.panorama.istenitdgp.com/"> Space-odyssey </a>, 
+            <a style={{ color: 'green' }} href="https://shubhamsingaal.github.io/Mirage/"> Mirage </a>,
+            and the <a style={{ color: 'green' }} href="https://shubhamsingaal.github.io/ISTE-Auditions-2023/"> ISTE Auditions page</a>.
             </li>
+            <li>
+            Lead a team of 15 students, overseeing all aspects of web development projects from conception to deployment.
+
+            </li>
+            
+           
           </ul>
         </div>
+
 
         {/*  */}
         <h5 className='text-center underline text-[18px] py-4'>
@@ -162,6 +164,7 @@ const ResumeLink = 'https://drive.google.com/file/d/1Abgtz_yzaRIuMywE2UhnX1gSnoz
             <span className='px-2'>|</span>Durgapur , India
           </p>
           <p className='py-1 italic'>Bachelor of Technology in Metallurgical and Materials Engineering</p>
+          <p className='py-1 italic'>CourseWork - Fundamentals of Algorithms , Data Structures, Introduction to Computing</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
               Organisations: Indian Society for Technical Education (ISTE)

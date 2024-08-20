@@ -36,9 +36,9 @@ const Main = () => {
             Hi, I&#39;m{' '}
             <span className='text-[#5651e5]'> Shubham</span>
           </h1>
-          <h1 className='py-2 text-gray-700'>A Front-End Web Developer</h1>
+          <h1 className='py-2 text-gray-700'>A Full Stack Developer</h1>
           <p className='py-4 text-gray-600 sm:max-w-[70%] -mb-5 md:m-auto'>
-            I’m focused on building responsive front-end web applications
+            I’m focused on building responsive web applications
             integrating back-end technologies.
           </p>
           <div className='flex items-center justify-between max-w-[330px] m-auto py-4'>

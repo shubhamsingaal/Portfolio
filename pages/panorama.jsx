@@ -32,14 +32,14 @@ const panorama = () => {
             increase in participation, creating an immersive and engaging experience.
           </p>
           <a
-            href='https://space.panorama.istenitdgp.com/'
+            href='https://space-odyssey-game.vercel.app/'
             target='_blank'
             rel='noreferrer'
           >
             <button className='px-8 py-2 mt-4 mr-8'>Demo</button>
           </a>
           <a
-            href='https://github.com/shubhamsingaal/Space-Odyssey'
+            href='https://github.com/shubhamsingaal/Space-odyssey'
             target='_blank'
             rel='noreferrer'
           >

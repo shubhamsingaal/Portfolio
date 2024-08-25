@@ -39,7 +39,7 @@ const auditions = () => {
             <button className='px-8 py-2 mt-4 mr-8'>Code</button>
           </a>
           <a
-            href='https://shubhamsingaal.github.io/ISTE-Auditions-2023/'
+            href='https://iste-auditions-2023.vercel.app/'
             target='_blank'
             rel='noreferrer'
           >

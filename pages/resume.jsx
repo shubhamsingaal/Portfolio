@@ -5,7 +5,7 @@ import { color } from 'framer-motion';
 
 
 
-const ResumeLink = 'https://drive.google.com/file/d/1ojM4hI_Ucar2A2PcOTRj-k-oHIXlsO7E/view?usp=sharing'; 
+const ResumeLink = 'https://docs.google.com/document/d/1ElOnGgLVFFq5ngBbxT897owY3TsLHqhv28B6k_gLjIo/edit?usp=drive_link'; 
 // Replace this with the actual path or URL of your PDF file
 
   const Resume = () => {
@@ -137,10 +137,10 @@ web applications. Enthusiastic about taking on challenges and committed to conti
             <li>
             Developed various websites including <a style={{ color: 'green' }} href="https://www.istenitdgp.com/">ISTE NIT Durgapur</a>
             , <a style={{ color: 'green' }} href="https://cit.istenitdgp.com/">CIT 7.0 </a>,
-            <a style={{ color: 'green' }} href="https://escape-room-game-d6308f.spheron.app/"> Adventure-alcove </a>, 
-            <a style={{ color: 'green' }} href="https://space.panorama.istenitdgp.com/"> Space-odyssey </a>, 
-            <a style={{ color: 'green' }} href="https://shubhamsingaal.github.io/Mirage/"> Mirage </a>,
-            and the <a style={{ color: 'green' }} href="https://shubhamsingaal.github.io/ISTE-Auditions-2023/"> ISTE Auditions page</a>.
+            <a style={{ color: 'green' }} href="https://adventure-alcove.vercel.app/"> Adventure-alcove </a>, 
+            <a style={{ color: 'green' }} href="https://space-odyssey-game.vercel.app/"> Space-odyssey </a>, 
+            <a style={{ color: 'green' }} href="https://mirage-nitdgp.vercel.app/"> Mirage </a>,
+            and the <a style={{ color: 'green' }} href="https://iste-auditions-2023.vercel.app/"> ISTE Auditions page</a>.
             </li>
             <li>
             Lead a team of 15 students, overseeing all aspects of web development projects from conception to deployment.

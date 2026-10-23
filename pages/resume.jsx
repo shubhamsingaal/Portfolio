@@ -1,15 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
-const ResumeLink =
-  'https://drive.google.com/file/d/1wZHnOnoqZ6_uoPrPNeRUYg0PX3Liyeif/view?usp=sharing';
-
 const Resume = () => {
-  const downloadResume = () => {
-    window.open(ResumeLink, '_blank');
-  };
-
   return (
     <>
       <Head>
@@ -24,12 +18,14 @@ const Resume = () => {
       <div className='max-w-[860px] mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-16'>
         <h2 className='text-center'>Resume</h2>
         <div className='text-center py-4'>
-          <button
-            onClick={downloadResume}
+          <a
+            href='/assets/Shubham_Kumar_Resume.pdf'
+            target='_blank'
+            rel='noreferrer'
             className='bg-accent text-ink-950 font-bold py-2 px-5 rounded-xl hover:bg-accent-dim'
           >
-            Download Resume
-          </button>
+            Open Resume PDF
+          </a>
         </div>
 
         <div className='surface my-4 p-4 w-full flex justify-between items-center'>
@@ -189,9 +185,9 @@ const Resume = () => {
           <p className='pt-3'>
             <span className='font-bold text-white'>JK-bros</span> — Logistics
             platform with React, Firebase, and Node.js.{' '}
-            <a href='/#projects' className='text-accent hover:underline'>
-              Preview
-            </a>
+            <Link href='/#projects'>
+              <a className='text-accent hover:underline'>Preview</a>
+            </Link>
           </p>
         </div>
 

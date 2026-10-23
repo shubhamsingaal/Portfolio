@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
@@ -24,10 +24,17 @@ const BrandMark = () => (
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
+  const menuButtonRef = useRef(null);
+  const menuRef = useRef(null);
 
   const handleNav = () => {
-    setNav(!nav);
+    setNav((isOpen) => !isOpen);
   };
+
+  const closeNav = useCallback(() => {
+    setNav(false);
+    menuButtonRef.current?.focus();
+  }, []);
 
   useEffect(() => {
     const handleShadow = () => {
@@ -36,6 +43,42 @@ const Navbar = () => {
     window.addEventListener('scroll', handleShadow);
     return () => window.removeEventListener('scroll', handleShadow);
   }, []);
+
+  useEffect(() => {
+    if (!nav) return undefined;
+
+    const menu = menuRef.current;
+    const focusableElements = () =>
+      menu?.querySelectorAll(
+        'a[href], button:not([disabled]):not([tabindex="-1"])'
+      ) || [];
+
+    focusableElements()[0]?.focus();
+
+    const handleMenuKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeNav();
+        return;
+      }
+
+      if (event.key !== 'Tab') return;
+
+      const focusable = focusableElements();
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleMenuKeyDown);
+    return () => document.removeEventListener('keydown', handleMenuKeyDown);
+  }, [nav, closeNav]);
 
   return (
     <motion.header
@@ -74,12 +117,15 @@ const Navbar = () => {
             ))}
           </ul>
           <button
+            ref={menuButtonRef}
             type='button'
             onClick={handleNav}
             className='lg:hidden text-slate-100 p-2'
-            aria-label='Open menu'
+            aria-label={nav ? 'Close menu' : 'Open menu'}
+            aria-expanded={nav}
+            aria-controls='mobile-navigation'
           >
-            <AiOutlineMenu size={22} />
+            {nav ? <AiOutlineClose size={22} /> : <AiOutlineMenu size={22} />}
           </button>
         </div>
       </div>
@@ -87,15 +133,30 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? 'lg:hidden fixed left-0 top-0 w-full h-screen bg-black/70 z-[110]'
+            ? 'lg:hidden fixed left-0 top-0 w-full h-screen z-[110]'
             : 'hidden'
         }
+        aria-hidden={!nav}
       >
-        <div className='fixed left-0 top-0 w-[82%] max-w-sm h-screen bg-ink-900 p-8 border-r border-white/10 overflow-y-auto'>
+        <button
+          type='button'
+          tabIndex={-1}
+          onClick={closeNav}
+          aria-label='Close menu'
+          className='absolute inset-0 h-full w-full bg-black/70'
+        />
+        <div
+          ref={menuRef}
+          id='mobile-navigation'
+          role='dialog'
+          aria-modal='true'
+          aria-label='Mobile navigation'
+          className='fixed left-0 top-0 z-10 w-[82%] max-w-sm h-screen bg-ink-900 p-8 border-r border-white/10 overflow-y-auto'
+        >
           <div>
             <div className='flex w-full items-center justify-between'>
               <Link href='/'>
-                <a onClick={() => setNav(false)} className='flex items-center gap-3'>
+                <a onClick={closeNav} className='flex items-center gap-3'>
                   <BrandMark />
                   <span className='text-sm font-semibold text-white'>
                     Shubham Kumar
@@ -104,7 +165,7 @@ const Navbar = () => {
               </Link>
               <button
                 type='button'
-                onClick={handleNav}
+                onClick={closeNav}
                 className='rounded-full border border-white/10 p-3 cursor-pointer hover:border-accent/50'
                 aria-label='Close menu'
               >
@@ -122,10 +183,13 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li
                   key={link.href}
-                  onClick={() => setNav(false)}
                   className='py-3.5 text-sm tracking-[0.16em] text-slate-200 list-none'
                 >
-                  <Link href={link.href}>{link.label}</Link>
+                  <Link href={link.href}>
+                    <a className='block' onClick={closeNav}>
+                      {link.label}
+                    </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -138,6 +202,7 @@ const Navbar = () => {
                   href='https://www.linkedin.com/in/shubhamsingaal/'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='LinkedIn'
                 >
                   <div className='icon-btn'>
                     <FaLinkedinIn />
@@ -147,20 +212,21 @@ const Navbar = () => {
                   href='https://github.com/shubhamsingaal'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='GitHub'
                 >
                   <div className='icon-btn'>
                     <FaGithub />
                   </div>
                 </a>
                 <Link href='/#contact'>
-                  <a onClick={() => setNav(false)}>
+                  <a onClick={closeNav} aria-label='Email'>
                     <div className='icon-btn'>
                       <AiOutlineMail />
                     </div>
                   </a>
                 </Link>
                 <Link href='/resume'>
-                  <a onClick={() => setNav(false)}>
+                  <a onClick={closeNav} aria-label='Resume'>
                     <div className='icon-btn'>
                       <BsFillPersonLinesFill />
                     </div>

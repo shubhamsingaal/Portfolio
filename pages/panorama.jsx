@@ -3,11 +3,18 @@ import React from 'react';
 import panoramaImg from '../public/assets/projects/panorama.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import PageMeta from '../components/PageMeta';
 import ProjectStory from '../components/ProjectStory';
 
 const panorama = () => {
   return (
     <div className='w-full'>
+      <PageMeta
+        title='Panorama | Interactive Campus Quiz'
+        description='A React and Firebase quiz experience with timed challenges, topic-specific categories, and more than 500 participants.'
+        path='/panorama'
+        image='/assets/projects/panorama.png'
+      />
       <div className='w-screen h-[50vh] relative'>
         <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10' />
         <Image

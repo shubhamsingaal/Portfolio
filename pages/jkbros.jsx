@@ -3,11 +3,18 @@ import React from 'react';
 import jkbrosImg from '../public/assets/projects/jkbros.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import PageMeta from '../components/PageMeta';
 import ProjectStory from '../components/ProjectStory';
 
 const jkbros = () => {
   return (
     <div className='w-full'>
+      <PageMeta
+        title='JK-Bros | Logistics Platform'
+        description='A logistics platform for intracity and intercity delivery, built with React, Tailwind CSS, Firebase, and Node.js.'
+        path='/jkbros'
+        image='/assets/projects/jkbros.png'
+      />
       <div className='w-screen h-[50vh] relative'>
         <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10' />
         <Image

@@ -1,19 +1,17 @@
 import React from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import PageMeta from '../components/PageMeta';
 
 const Resume = () => {
   return (
     <>
-      <Head>
-        <title>Shubham Kumar | Resume</title>
-        <meta
-          name='description'
-          content='Resume of Shubham Kumar — full-stack engineer, JSW Steel, founder of DevMatch.'
-        />
-        <link rel='icon' href='/fav.png' />
-      </Head>
+      <PageMeta
+        title='Shubham Kumar | Resume'
+        description='Resume of Shubham Kumar — full-stack engineer, JSW Steel, founder of DevMatch.'
+        path='/resume'
+        image='/assets/shubham.jpg'
+      />
 
       <div className='max-w-[860px] mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-16'>
         <h2 className='text-center'>Resume</h2>

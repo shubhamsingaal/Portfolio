@@ -3,11 +3,18 @@ import React from 'react';
 import auditionsImg from '../public/assets/projects/auditions.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import PageMeta from '../components/PageMeta';
 import ProjectStory from '../components/ProjectStory';
 
 const auditions = () => {
   return (
     <div className='w-full'>
+      <PageMeta
+        title='Auditions App | Campus Auditions Platform'
+        description='A campus auditions platform built with JavaScript, CSS, and MongoDB, designed for a large student community.'
+        path='/auditions'
+        image='/assets/projects/auditions.png'
+      />
       <div className='w-screen h-[50vh] relative'>
         <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10' />
         <Image

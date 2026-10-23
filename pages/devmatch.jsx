@@ -3,11 +3,18 @@ import React from 'react';
 import devmatchImg from '../public/assets/projects/devmatch.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import PageMeta from '../components/PageMeta';
 import ProjectStory from '../components/ProjectStory';
 
 const DevMatch = () => {
   return (
     <div className='w-full'>
+      <PageMeta
+        title='DevMatch | Developer Interview Practice'
+        description='How I built DevMatch, a live platform for developer matchmaking, interview practice, real-time chat, mock sessions, and collaborative coding.'
+        path='/devmatch'
+        image='/assets/projects/devmatch.png'
+      />
       <div className='w-screen h-[50vh] relative'>
         <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10' />
         <Image

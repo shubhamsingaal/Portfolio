@@ -3,11 +3,18 @@ import React from "react";
 import citImg from "../public/assets/projects/cit.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
+import PageMeta from "../components/PageMeta";
 import ProjectStory from "../components/ProjectStory";
 
 const cit = () => {
   return (
     <div className="w-full">
+      <PageMeta
+        title="Cognitive Intelligence Test | ISTE NIT Durgapur"
+        description="The event website for Cognitive Intelligence Test 7.0, ISTE Students' Chapter NIT Durgapur's annual flagship event."
+        path="/cit"
+        image="/assets/projects/cit.png"
+      />
       <div className="w-screen h-[50vh] relative">
         <div className="absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10" />
         <Image

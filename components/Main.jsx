@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AiOutlineMail } from 'react-icons/ai';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import ProfilePhoto from './ProfilePhoto';
 
@@ -26,18 +25,18 @@ const Main = () => {
 
       <div className='relative page-wrap pt-24 pb-12 sm:pt-28 sm:pb-16 md:min-h-[100svh] grid md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] gap-8 md:gap-10 md:items-center'>
         <div className='text-center md:text-left min-w-0'>
-          <p className='section-kicker mb-4'>Available for software roles</p>
+          <p className='section-kicker mb-4'>Open to SDE / full-stack roles</p>
           <h1 className='text-white text-[2rem] sm:text-5xl lg:text-6xl'>
             Hi, I&#39;m{' '}
             <span className='text-accent'>Shubham</span>
           </h1>
           <h2 className='mt-3 text-lg sm:text-2xl font-medium text-slate-200'>
-            Full-Stack Engineer building products people actually use.
+            Full-Stack Engineer · Next.js, TypeScript, Node.js
           </h2>
           <p className='py-5 text-slate-400 max-w-[540px] mx-auto md:mx-0 leading-relaxed text-[15px] sm:text-base'>
-            NIT Durgapur graduate. Assistant Manager — Technology Excellence at
-            JSW Steel. Founder of DevMatch. I ship production web products with
-            React, Next.js, TypeScript, and Node.js.
+            NIT Durgapur graduate. I ship production web apps — currently
+            Assistant Manager, Technology Excellence at JSW Steel, and founder
+            of DevMatch, a live interview-prep platform.
           </p>
 
           <div className='flex flex-wrap justify-center md:justify-start gap-2 mb-7'>
@@ -64,6 +63,14 @@ const Main = () => {
                 Resume
               </a>
             </Link>
+            <a
+              href='https://github.com/shubhamsingaal'
+              target='_blank'
+              rel='noreferrer'
+              className='inline-flex items-center justify-center rounded-xl border border-white/15 px-6 py-3 text-sm uppercase tracking-wider text-slate-200 hover:border-accent/50 hover:text-accent transition w-full sm:w-auto'
+            >
+              GitHub
+            </a>
           </div>
 
           <div className='flex items-center justify-center md:justify-start gap-3 py-7'>
@@ -87,20 +94,11 @@ const Main = () => {
                 <FaGithub />
               </div>
             </a>
-            <Link href='/#contact'>
-              <a aria-label='Email'>
-                <div className='icon-btn'>
-                  <AiOutlineMail />
-                </div>
-              </a>
-            </Link>
-            <Link href='/resume'>
-              <a aria-label='Resume'>
-                <div className='icon-btn'>
-                  <BsFillPersonLinesFill />
-                </div>
-              </a>
-            </Link>
+            <a href='mailto:shubhamsingaal@gmail.com' aria-label='Email'>
+              <div className='icon-btn'>
+                <AiOutlineMail />
+              </div>
+            </a>
           </div>
 
           <div className='grid grid-cols-3 gap-2 sm:gap-3 max-w-lg mx-auto md:mx-0'>
@@ -117,8 +115,8 @@ const Main = () => {
           </div>
         </div>
 
-        <div className='flex flex-col items-center lg:items-center'>
-          <ProfilePhoto size='hero' priority />
+        <div className='flex flex-col items-center'>
+          <ProfilePhoto priority />
           <div className='mt-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.16em] text-slate-400'>
             <span>Mumbai · India</span>
             <span className='h-1 w-1 rounded-full bg-accent' />

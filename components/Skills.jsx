@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import {
-  SiC,
   SiCplusplus,
-  SiCss3,
   SiDocker,
   SiExpress,
   SiFirebase,
@@ -25,39 +23,37 @@ import { AiOutlineApi } from 'react-icons/ai';
 
 const groups = [
   {
-    label: 'Languages',
+    label: 'Frontend',
     items: [
-      { title: 'JavaScript', icon: SiJavascript },
       { title: 'TypeScript', icon: SiTypescript },
-      { title: 'C', icon: SiC },
-      { title: 'C++', icon: SiCplusplus },
-      { title: 'SQL', icon: FaDatabase },
-      { title: 'HTML', icon: SiHtml5 },
-      { title: 'CSS', icon: SiCss3 },
+      { title: 'JavaScript', icon: SiJavascript },
+      { title: 'React.js', icon: SiReact },
+      { title: 'Next.js', icon: SiNextdotjs },
+      { title: 'Tailwind CSS', icon: SiTailwindcss },
+      { title: 'HTML / CSS', icon: SiHtml5 },
     ],
   },
   {
-    label: 'Frameworks & Databases',
+    label: 'Backend & Data',
     items: [
-      { title: 'React.js', icon: SiReact },
-      { title: 'Next.js', icon: SiNextdotjs },
       { title: 'Node.js', icon: SiNodedotjs },
       { title: 'Express.js', icon: SiExpress },
-      { title: 'Tailwind CSS', icon: SiTailwindcss },
       { title: 'PostgreSQL', icon: SiPostgresql },
       { title: 'Firebase', icon: SiFirebase },
       { title: 'MySQL', icon: SiMysql },
+      { title: 'REST APIs', icon: AiOutlineApi },
+      { title: 'SQL', icon: FaDatabase },
     ],
   },
   {
-    label: 'Tools & Other',
+    label: 'Infra & Tooling',
     items: [
       { title: 'Docker', icon: SiDocker },
       { title: 'Git / GitHub', icon: SiGithub },
       { title: 'GitHub Actions', icon: SiGithubactions },
-      { title: 'REST APIs', icon: AiOutlineApi },
       { title: 'SEO', icon: FaSearch },
       { title: 'Google Analytics', icon: SiGoogleanalytics },
+      { title: 'C / C++', icon: SiCplusplus },
     ],
   },
 ];
@@ -84,8 +80,8 @@ const Skills = () => {
         <p className='section-kicker'>Skills</p>
         <h2 className='py-3'>The stack I work in</h2>
         <p className='text-slate-400 max-w-2xl mb-8'>
-          Languages, frameworks, databases, and tooling I use to ship and
-          measure products.
+          Day-to-day: TypeScript, Next.js, and Node. Comfortable across data,
+          APIs, and shipping with Docker and CI.
         </p>
         {groups.map((group) => (
           <div key={group.label} className='mb-8 last:mb-0'>

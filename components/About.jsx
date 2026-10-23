@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import ProfilePhoto from './ProfilePhoto';
 
-const highlights = [
-  { value: 'NIT Durgapur', label: 'B.Tech, 2025' },
-  { value: 'JSW Steel', label: 'Technology Excellence' },
-  { value: '~80%', label: 'Search visibility lift' },
-  { value: '5,000+', label: 'Students reached' },
+const snapshot = [
+  { label: 'Role', value: 'Assistant Manager, Technology Excellence · JSW Steel' },
+  { label: 'Building', value: 'DevMatch — live interview-prep matchmaking' },
+  { label: 'Education', value: 'B.Tech, NIT Durgapur · 2025' },
+  { label: 'Stack', value: 'Next.js, TypeScript, Node.js, PostgreSQL, Docker' },
+  { label: 'Location', value: 'Mumbai · Open to SDE / full-stack roles' },
 ];
 
 const About = () => {
@@ -20,20 +20,20 @@ const About = () => {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6 }}
     >
-      <div className='page-wrap grid md:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-center'>
+      <div className='page-wrap grid md:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-start'>
         <div>
           <p className='section-kicker'>About</p>
           <h2 className='py-3'>Who I am</h2>
           <p className='py-2 text-slate-400 leading-relaxed'>
-            I&#39;m a product-focused full-stack engineer from NIT Durgapur. I
-            turn messy operational problems into clean web products —
-            dashboards, matchmaking flows, and fast sites that actually rank.
+            I&#39;m a full-stack engineer who likes taking messy operational
+            problems and turning them into production web products — dashboards,
+            matchmaking flows, and SEO-ready Next.js apps.
           </p>
           <p className='py-2 text-slate-400 leading-relaxed'>
             At JSW Steel I work on technology excellence: SAP/MES production
             data, KPI dashboards, RCA, and cross-functional system improvements.
             Before that I interned at Coditioning, migrating a React codebase to
-            Next.js with SSR/SSG, SEO, and Builder.io.
+            Next.js with SSR, SSG, and Builder.io.
           </p>
           <p className='py-2 text-slate-400 leading-relaxed'>
             I also founded{' '}
@@ -45,39 +45,32 @@ const About = () => {
             >
               DevMatch
             </a>
-            , a developer matchmaking platform for interview practice, real-time
-            chat, mocks, and accountability.
+            — profiles, swipe-to-match, real-time chat, mocks, and a live
+            co-solve editor for interview practice.
           </p>
           <Link href='/#projects'>
             <a className='inline-block pt-4 text-accent hover:underline'>
-              Check out some of my latest projects →
+              See selected work →
             </a>
           </Link>
         </div>
 
         <div className='surface p-6 sm:p-7'>
-          <div className='flex items-center gap-4 mb-6'>
-            <ProfilePhoto size='sm' ring />
-            <div>
-              <p className='text-white font-semibold'>Shubham Kumar</p>
-              <p className='text-sm text-slate-400'>Full-Stack Engineer</p>
-            </div>
-          </div>
-          <div className='grid grid-cols-2 gap-3'>
-            {highlights.map((item) => (
-              <div
-                key={item.label}
-                className='rounded-xl border border-white/10 bg-ink-950/60 px-3 py-4'
-              >
-                <p className='text-white font-semibold text-sm sm:text-base leading-tight'>
-                  {item.value}
-                </p>
-                <p className='mt-1 font-mono text-[10px] uppercase tracking-wider text-slate-400'>
+          <p className='font-mono text-[11px] uppercase tracking-[0.2em] text-accent mb-4'>
+            Snapshot
+          </p>
+          <dl className='space-y-4'>
+            {snapshot.map((item) => (
+              <div key={item.label}>
+                <dt className='font-mono text-[10px] uppercase tracking-wider text-slate-500'>
                   {item.label}
-                </p>
+                </dt>
+                <dd className='mt-1 text-sm text-slate-200 leading-relaxed'>
+                  {item.value}
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
     </motion.section>

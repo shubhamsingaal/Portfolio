@@ -18,7 +18,7 @@ const Resume = () => {
           name='description'
           content='Resume of Shubham Kumar — full-stack engineer, JSW Steel, founder of DevMatch.'
         />
-        <link rel='icon' href='/assets/shubham.jpg' />
+        <link rel='icon' href='/fav.png' />
       </Head>
 
       <div className='max-w-[860px] mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-16'>

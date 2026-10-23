@@ -12,32 +12,43 @@ const items = [
     title: 'DevMatch',
     backgroundImg: devmatchImg,
     projectUrl: '/devmatch',
+    liveUrl: 'https://devmatch.space/',
     tech: 'Next.js · Real-time · Matching',
+    summary:
+      'Live matchmaking for interview prep: profiles, swipe-to-match, chat, mocks, and a co-solve editor.',
     featured: true,
   },
   {
     title: 'Jk-Bros | Logistics',
     backgroundImg: jkbrosImg,
     projectUrl: '/jkbros',
-    tech: 'React JS · Firebase',
+    tech: 'React · Firebase · Node.js',
+    summary:
+      'Logistics web app for intra- and intercity delivery — auth, data, and ops flows on Firebase.',
   },
   {
     title: 'CIT | ISTE',
     backgroundImg: citImg,
     projectUrl: '/cit',
-    tech: 'Next JS',
+    tech: 'Next.js',
+    summary:
+      'Technical-fest platform for ISTE NIT Durgapur — event pages, registration, and production deploys.',
   },
   {
     title: 'Auditions App',
     backgroundImg: auditionsImg,
     projectUrl: '/auditions',
     tech: 'JavaScript',
+    summary:
+      'Campus auditions workflow so clubs can collect, review, and manage applicant rounds.',
   },
   {
     title: 'Panorama',
     backgroundImg: panoramaImg,
     projectUrl: '/panorama',
-    tech: 'React JS',
+    tech: 'React',
+    summary:
+      'Interactive React front-end for campus-scale content and event discovery.',
   },
 ];
 
@@ -48,8 +59,8 @@ const Projects = () => {
         <p className='section-kicker'>Projects</p>
         <h2 className='py-3'>What I&#39;ve built</h2>
         <p className='text-slate-400 max-w-2xl mb-8'>
-          Live products and campus-scale platforms — matchmaking, logistics,
-          events, and quizzes used by thousands of students.
+          Production products: a live matchmaking app, a logistics platform, and
+          campus systems shipped with a 15-person tech team.
         </p>
         <div className='grid md:grid-cols-2 gap-5 sm:gap-6'>
           {items.map((item, index) => (

@@ -5,7 +5,6 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
-import ProfilePhoto from './ProfilePhoto';
 
 const Contact = () => {
   return (
@@ -21,27 +20,21 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className='md:col-span-2 w-full surface p-6 sm:p-7 flex flex-col'
           >
-            <div className='flex items-center gap-4'>
-              <ProfilePhoto size='md' />
-              <div>
-                <h3 className='text-xl text-white'>Shubham Kumar</h3>
-                <p className='text-accent text-sm'>Full-Stack Engineer</p>
-              </div>
-            </div>
+            <h3 className='text-xl text-white'>Shubham Kumar</h3>
+            <p className='text-accent text-sm mt-1'>Full-Stack Engineer</p>
             <p className='py-5 text-slate-400 leading-relaxed'>
-              Mumbai · Assistant Manager at JSW Steel · Founder of DevMatch.
-              Open to full-time software roles and interesting product
-              collaborations.
+              Mumbai · JSW Steel · Founder of DevMatch. Open to full-time
+              software roles. Fastest way to reach me is email or LinkedIn.
             </p>
             <a
               href='mailto:shubhamsingaal@gmail.com'
-              className='text-sm text-slate-300 hover:text-accent break-all'
+              className='text-sm text-slate-200 hover:text-accent break-all font-mono'
             >
               shubhamsingaal@gmail.com
             </a>
             <div className='mt-auto'>
               <p className='uppercase pt-8 font-mono text-xs tracking-[0.2em] text-slate-400'>
-                Connect with me
+                Connect
               </p>
               <div className='flex items-center gap-3 py-4'>
                 <a
@@ -106,7 +99,7 @@ const Contact = () => {
                 </div>
                 <div className='flex flex-col'>
                   <label className='uppercase text-xs py-2 text-slate-400 tracking-wider'>
-                    Phone Number
+                    Phone
                   </label>
                   <input
                     className='rounded-lg p-3 bg-ink-950 border border-white/10 text-slate-100 focus:outline-none focus:border-accent/60'
@@ -148,7 +141,7 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              <button className='w-full p-4 mt-4 bg-accent text-ink-950 font-semibold tracking-wider hover:bg-accent-dim transition'>
+              <button className='w-full p-4 mt-4 bg-accent text-ink-950 font-semibold tracking-wider hover:bg-accent-dim transition uppercase'>
                 Send Message
               </button>
             </form>

@@ -15,7 +15,7 @@ export default function Home() {
           name='description'
           content='Full-stack engineer at JSW Steel and founder of DevMatch. I build production web products with Next.js, TypeScript, and Node.js.'
         />
-        <link rel='icon' href='/assets/shubham.jpg' />
+        <link rel='icon' href='/fav.png' />
       </Head>
       <Main />
       <About />

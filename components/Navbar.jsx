@@ -4,7 +4,6 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { motion } from 'framer-motion';
-import ProfilePhoto from './ProfilePhoto';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -15,6 +14,12 @@ const navLinks = [
   { href: '/resume', label: 'Resume' },
   { href: '/#contact', label: 'Contact' },
 ];
+
+const BrandMark = () => (
+  <span className='flex h-9 w-9 items-center justify-center rounded-lg border border-accent/40 bg-accent/10 font-mono text-sm font-semibold text-accent'>
+    SK
+  </span>
+);
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -46,7 +51,7 @@ const Navbar = () => {
       <div className='flex justify-between items-center w-full h-full page-wrap 2xl:max-w-none 2xl:px-12'>
         <Link href='/'>
           <a className='flex items-center gap-3 group'>
-            <ProfilePhoto size='nav' ring className='group-hover:opacity-90' />
+            <BrandMark />
             <span className='hidden sm:flex flex-col leading-tight'>
               <span className='text-sm font-semibold text-white tracking-wide'>
                 Shubham Kumar
@@ -91,7 +96,7 @@ const Navbar = () => {
             <div className='flex w-full items-center justify-between'>
               <Link href='/'>
                 <a onClick={() => setNav(false)} className='flex items-center gap-3'>
-                  <ProfilePhoto size='nav' ring />
+                  <BrandMark />
                   <span className='text-sm font-semibold text-white'>
                     Shubham Kumar
                   </span>
@@ -108,7 +113,7 @@ const Navbar = () => {
             </div>
             <div className='border-b border-white/10 my-4'>
               <p className='w-[90%] py-4 text-slate-400 text-sm'>
-                Building products that recruiters and users both notice.
+                Next.js · TypeScript · Node.js
               </p>
             </div>
           </div>

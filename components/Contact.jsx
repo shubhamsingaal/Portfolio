@@ -1,192 +1,171 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
-import ContactImg from '../public/assets/contact.jpg';
+import ProfilePhoto from './ProfilePhoto';
 
 const Contact = () => {
-  const contactContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5 } },
-  };
-
-  const leftBoxVariants = {
-    hidden: { opacity: 0 ,x: -100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1} },
-  };
-  
-
-  const rightBoxVariants = {
-    hidden: { opacity: 0,x: 100 },
-    visible: { opacity: 1 ,x: 0, transition: { duration: 1} },
-  };
-
   return (
-    <motion.div
-      variants={contactContainerVariants}
-      initial="hidden"
-      animate="visible"
-      id='contact'
-      className='w-full lg:h-screen'
-    >
-      <div className='max-w-[1240px] m-auto px-2 py-16 w-full '>
-        <p className='text-xl tracking-widest uppercase text-[#5651e5]'>
-          Contact
-        </p>
-        <h2 className='py-4'>Get In Touch</h2>
-        <div className='grid lg:grid-cols-5 gap-8'>
-          {/* left */}
+    <section id='contact' className='w-full section-pad'>
+      <div className='page-wrap'>
+        <p className='section-kicker'>Contact</p>
+        <h2 className='py-3'>Let&#39;s talk</h2>
+        <div className='grid md:grid-cols-5 gap-6 lg:gap-8 items-stretch mt-4'>
           <motion.div
-            variants={leftBoxVariants}
-            initial="hidden"
-            animate="visible"
-            className='col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4'
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className='md:col-span-2 w-full surface p-6 sm:p-7 flex flex-col'
           >
-            <div className='lg:p-4 h-full '>
+            <div className='flex items-center gap-4'>
+              <ProfilePhoto size='md' />
               <div>
-                <Image
-                  className='rounded-xl hover:scale-105 ease-in duration-300'
-                  src={ContactImg}
-                  alt='/'
-                />
+                <h3 className='text-xl text-white'>Shubham Kumar</h3>
+                <p className='text-accent text-sm'>Full-Stack Engineer</p>
               </div>
-              <div>
-                <h2 className='py-2'>Shubham Kumar</h2>
-                <p>Full-Stack Developer</p>
-                <p className='py-4'>
-                  I am available for freelance or full-time positions. Contact
-                  me and let&apos;s talk.
-                </p>
-              </div>
-              <div>
-                <p className='uppercase pt-8'>Connect With Me</p>
-                <div className='flex items-center justify-between py-4'>
-                  <a
-                    href='https://www.linkedin.com/in/shubhamsingaal/'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                      <FaLinkedinIn />
+            </div>
+            <p className='py-5 text-slate-400 leading-relaxed'>
+              Mumbai · Assistant Manager at JSW Steel · Founder of DevMatch.
+              Open to full-time software roles and interesting product
+              collaborations.
+            </p>
+            <a
+              href='mailto:shubhamsingaal@gmail.com'
+              className='text-sm text-slate-300 hover:text-accent break-all'
+            >
+              shubhamsingaal@gmail.com
+            </a>
+            <div className='mt-auto'>
+              <p className='uppercase pt-8 font-mono text-xs tracking-[0.2em] text-slate-400'>
+                Connect with me
+              </p>
+              <div className='flex items-center gap-3 py-4'>
+                <a
+                  href='https://www.linkedin.com/in/shubhamsingaal/'
+                  target='_blank'
+                  rel='noreferrer'
+                  aria-label='LinkedIn'
+                >
+                  <div className='icon-btn'>
+                    <FaLinkedinIn />
+                  </div>
+                </a>
+                <a
+                  href='https://github.com/shubhamsingaal'
+                  target='_blank'
+                  rel='noreferrer'
+                  aria-label='GitHub'
+                >
+                  <div className='icon-btn'>
+                    <FaGithub />
+                  </div>
+                </a>
+                <a href='mailto:shubhamsingaal@gmail.com' aria-label='Email'>
+                  <div className='icon-btn'>
+                    <AiOutlineMail />
+                  </div>
+                </a>
+                <Link href='/resume'>
+                  <a aria-label='Resume'>
+                    <div className='icon-btn'>
+                      <BsFillPersonLinesFill />
                     </div>
                   </a>
-                  <a
-                    href='https://github.com/shubhamsingaal'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                      <FaGithub />
-                    </div>
-                  </a>
-                  <Link href='mailto:shubhamkraj200@gmail.com'>
-                    <a>
-                      <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                        <AiOutlineMail />
-                      </div>
-                    </a>
-                  </Link>
-                  <Link href='/resume'>
-                    <a>
-                      <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                        <BsFillPersonLinesFill />
-                      </div>
-                    </a>
-                  </Link>
-                </div>
+                </Link>
               </div>
             </div>
           </motion.div>
 
-
-          {/* right */}
           <motion.div
-            variants={rightBoxVariants}
-            initial="hidden"
-            animate="visible"
-            className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4'
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className='md:col-span-3 w-full surface p-5 sm:p-7'
           >
-            <div className='p-4'>
-              <form
-                action='https://getform.io/f/mepNOrbM'
-                method='POST'
-                encType='multipart/form-data'
-              >
-                <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
-                  <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2'>Name</label>
-                    <input
-                      className='border-2 rounded-lg p-3 flex border-gray-300'
-                      type='text'
-                      name='name'
-                      required
-                    />
-                  </div>
-                  <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2'>
-                      Phone Number
-                    </label>
-                    <input
-                      className='border-2 rounded-lg p-3 flex border-gray-300'
-                      type='text'
-                      name='phone'
-                      
-                    />
-                  </div>
-                </div>
-                <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>Email</label>
+            <form
+              action='https://getform.io/f/mepNOrbM'
+              method='POST'
+              encType='multipart/form-data'
+            >
+              <div className='grid sm:grid-cols-2 gap-4 w-full'>
+                <div className='flex flex-col'>
+                  <label className='uppercase text-xs py-2 text-slate-400 tracking-wider'>
+                    Name
+                  </label>
                   <input
-                    className='border-2 rounded-lg p-3 flex border-gray-300'
-                    type='email'
-                    name='email'
-                    required
-                  />
-                </div>
-                <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>Subject</label>
-                  <input
-                    className='border-2 rounded-lg p-3 flex border-gray-300'
+                    className='rounded-lg p-3 bg-ink-950 border border-white/10 text-slate-100 focus:outline-none focus:border-accent/60'
                     type='text'
-                    name='subject'
+                    name='name'
                     required
                   />
                 </div>
-                <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>Message</label>
-                  <textarea
-                    className='border-2 rounded-lg p-3 border-gray-300'
-                    rows='4'
-                    name='message'
-                    required
-                  ></textarea>
+                <div className='flex flex-col'>
+                  <label className='uppercase text-xs py-2 text-slate-400 tracking-wider'>
+                    Phone Number
+                  </label>
+                  <input
+                    className='rounded-lg p-3 bg-ink-950 border border-white/10 text-slate-100 focus:outline-none focus:border-accent/60'
+                    type='text'
+                    name='phone'
+                  />
                 </div>
-                <button className='w-full p-4 text-gray-100 mt-4'>
-                  Send Message
-                </button>
-              </form>
-            </div>
+              </div>
+              <div className='flex flex-col py-2'>
+                <label className='uppercase text-xs py-2 text-slate-400 tracking-wider'>
+                  Email
+                </label>
+                <input
+                  className='rounded-lg p-3 bg-ink-950 border border-white/10 text-slate-100 focus:outline-none focus:border-accent/60'
+                  type='email'
+                  name='email'
+                  required
+                />
+              </div>
+              <div className='flex flex-col py-2'>
+                <label className='uppercase text-xs py-2 text-slate-400 tracking-wider'>
+                  Subject
+                </label>
+                <input
+                  className='rounded-lg p-3 bg-ink-950 border border-white/10 text-slate-100 focus:outline-none focus:border-accent/60'
+                  type='text'
+                  name='subject'
+                  required
+                />
+              </div>
+              <div className='flex flex-col py-2'>
+                <label className='uppercase text-xs py-2 text-slate-400 tracking-wider'>
+                  Message
+                </label>
+                <textarea
+                  className='rounded-lg p-3 bg-ink-950 border border-white/10 text-slate-100 focus:outline-none focus:border-accent/60'
+                  rows='5'
+                  name='message'
+                  required
+                ></textarea>
+              </div>
+              <button className='w-full p-4 mt-4 bg-accent text-ink-950 font-semibold tracking-wider hover:bg-accent-dim transition'>
+                Send Message
+              </button>
+            </form>
           </motion.div>
         </div>
 
-        <div className='flex justify-center py-12'>
+        <div className='flex justify-center pt-12'>
           <Link href='/'>
-            <a>
-              <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
-                <HiOutlineChevronDoubleUp
-                  className='text-[#5651e5]'
-                  size={30}
-                />
+            <a aria-label='Back to top'>
+              <div className='icon-btn'>
+                <HiOutlineChevronDoubleUp className='text-accent' size={24} />
               </div>
             </a>
           </Link>
         </div>
       </div>
-    </motion.div>
+    </section>
   );
 };
 

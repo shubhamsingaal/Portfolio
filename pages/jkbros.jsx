@@ -27,38 +27,40 @@ const jkbros = () => {
           <p>Project</p>
           <h2>Overview</h2>
           <p>
-            JK-Bros is a technology-driven logistics firm providing seamless intracity and intercity delivery solutions.It
-            include ReactJs for dynamic user interfaces, TailwindCss for responsive styling, Firebase for seamless data management, and Node.js for robust server-side functionality
+            JK-Bros is a technology-driven logistics firm providing seamless
+            intracity and intercity delivery solutions. Built with React for
+            dynamic interfaces, Tailwind CSS for responsive styling, Firebase
+            for data, and Node.js on the server.
           </p>
           <a
             href='https://github.com/shubhamsingaal/JK-bross'
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4 mr-8'>Code</button>
+            <button className='px-8 py-2 mt-4 mr-8 bg-accent text-ink-950 font-semibold'>Code</button>
           </a>
           <a
             href='https://jk-bros-netlify.netlify.app/'
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4'>Demo</button>
+            <button className='px-8 py-2 mt-4 bg-white/10 border border-white/15'>Demo</button>
           </a>
         </div>
-        <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4'>
+        <div className='col-span-4 md:col-span-1 surface py-4'>
           <div className='p-2'>
             <p className='text-center font-bold pb-2'>Technologies</p>
             <div className='grid grid-cols-3 md:grid-cols-1'>
-              <p className='text-gray-600 py-2 flex items-center'>
+              <p className='text-slate-300 py-2 flex items-center cursor-default'>
                 <RiRadioButtonFill className='pr-1' /> React
               </p>
-              <p className='text-gray-600 py-2 flex items-center'>
+              <p className='text-slate-300 py-2 flex items-center cursor-default'>
                 <RiRadioButtonFill className='pr-1' /> Tailwind
               </p>
-              <p className='text-gray-600 py-2 flex items-center'>
+              <p className='text-slate-300 py-2 flex items-center cursor-default'>
                 <RiRadioButtonFill className='pr-1' /> Javascript
               </p>
-              <p className='text-gray-600 py-2 flex items-center'>
+              <p className='text-slate-300 py-2 flex items-center cursor-default'>
                 <RiRadioButtonFill className='pr-1' /> Firebase
               </p> 
             </div>

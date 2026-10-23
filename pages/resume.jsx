@@ -2,7 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
-const ResumeLink = 'https://drive.google.com/file/d/1wZHnOnoqZ6_uoPrPNeRUYg0PX3Liyeif/view?usp=sharing';
+const ResumeLink =
+  'https://drive.google.com/file/d/1wZHnOnoqZ6_uoPrPNeRUYg0PX3Liyeif/view?usp=sharing';
 
 const Resume = () => {
   const downloadResume = () => {
@@ -12,135 +13,208 @@ const Resume = () => {
   return (
     <>
       <Head>
-        <title>Shubham | Resume</title>
+        <title>Shubham Kumar | Resume</title>
         <meta
-          name="description"
-          content="I’m a full stack web developer specializing in building (and occasionally designing) exceptional digital experiences."
+          name='description'
+          content='Resume of Shubham Kumar — full-stack engineer, JSW Steel, founder of DevMatch.'
         />
-        <link rel="icon" href="/fav.png" />
+        <link rel='icon' href='/assets/shubham.jpg' />
       </Head>
 
-      <div className="max-w-[940px] mx-auto p-2 pt-[120px]">
-        <h2 className="text-center text-2xl font-bold">Resume</h2>
-        <div className="text-center py-4">
+      <div className='max-w-[860px] mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-16'>
+        <h2 className='text-center'>Resume</h2>
+        <div className='text-center py-4'>
           <button
             onClick={downloadResume}
-            className="bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-800"
+            className='bg-accent text-ink-950 font-bold py-2 px-5 rounded-xl hover:bg-accent-dim'
           >
             Download Resume
           </button>
         </div>
 
-        {/* Header Section */}
-        <div className="bg-gray-200 my-4 p-4 w-full flex justify-between items-center">
-          <h2 className="text-center text-lg font-bold">Shubham Kumar</h2>
-          <div className="flex">
+        <div className='surface my-4 p-4 w-full flex justify-between items-center'>
+          <div>
+            <h2 className='text-lg'>Shubham Kumar</h2>
+            <p className='text-sm text-slate-400'>
+              Mumbai · Maharashtra · India
+            </p>
+          </div>
+          <div className='flex'>
             <a
-              href="https://www.linkedin.com/in/shubhamsingaal/"
-              target="_blank"
-              rel="noreferrer"
-              className="mr-4"
+              href='https://www.linkedin.com/in/shubhamsingaal/'
+              target='_blank'
+              rel='noreferrer'
+              className='mr-4 text-slate-200 hover:text-accent'
             >
               <FaLinkedinIn size={20} />
             </a>
             <a
-              href="https://github.com/shubhamsingaal"
-              target="_blank"
-              rel="noreferrer"
+              href='https://github.com/shubhamsingaal'
+              target='_blank'
+              rel='noreferrer'
+              className='text-slate-200 hover:text-accent'
             >
               <FaGithub size={20} />
             </a>
           </div>
         </div>
 
-        {/* Summary Section */}
-        <div className="text-center py-4 text-xl font-bold uppercase tracking-wider">
-          <p>Proven Leadership | Web Development | Complex Problem Solving</p>
+        <div className='text-center py-4 font-mono text-xs uppercase tracking-[0.18em] text-accent'>
+          Full-Stack Engineering · Product · Data-informed systems
         </div>
-        <p>
-          A dedicated and highly motivated undergraduate student eager to learn and work with diverse tech stacks
-          and emerging technologies. Proficient in the MERN stack, with hands-on experience in developing dynamic,
-          responsive web applications. Enthusiastic about taking on challenges and committed to continuous learning
-          and growth.
+        <p className='text-slate-400 leading-relaxed'>
+          Full-stack engineer and NIT Durgapur graduate. Currently Assistant
+          Manager — Technology Excellence at JSW Steel. Founder of DevMatch.
+          Experienced shipping React/Next.js products, SEO-driven migrations,
+          and operational analytics dashboards.
         </p>
 
-        {/* Skills Section */}
-        <div className="text-center py-4">
-          <h5 className="text-center underline text-[18px] py-2">Skills</h5>
-          <p className="py-2">
-            <span className="font-bold">Programming Languages</span>: JavaScript, C, C++, HTML, CSS, SQL, Algorithms, Data Structures, Networks
+        <div className='text-center py-6'>
+          <h5 className='text-center text-accent font-mono text-xs uppercase tracking-[0.2em] py-2'>
+            Skills
+          </h5>
+          <p className='py-2 text-slate-300'>
+            <span className='font-semibold text-white'>Programming</span>:
+            JavaScript, TypeScript, C, C++, SQL, HTML, CSS
           </p>
-          <p className="py-2">
-            <span className="font-bold">Libraries/Tools</span>: ReactJS, NextJS, STL, Bootstrap, Tailwind CSS, SEO, Git, GitHub
+          <p className='py-2 text-slate-300'>
+            <span className='font-semibold text-white'>
+              Frameworks & Databases
+            </span>
+            : React.js, Next.js, Node.js, Express.js, Tailwind CSS, PostgreSQL,
+            Firebase, MySQL
+          </p>
+          <p className='py-2 text-slate-300'>
+            <span className='font-semibold text-white'>Tools</span>: Docker,
+            Git/GitHub, GitHub Actions (CI/CD), REST APIs, SEO, Google Analytics
           </p>
         </div>
 
-        {/* Professional Experience */}
-        <h5 className="text-center underline text-[18px] py-4">Professional Experience</h5>
+        <h5 className='text-center text-accent font-mono text-xs uppercase tracking-[0.2em] py-4'>
+          Experience
+        </h5>
 
-        {/* Experience: Software Engineering Intern */}
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold">Coditioning</span>
-            <span className="px-2">|</span>London, UK - Remote
+        <div className='py-6'>
+          <p>
+            <span className='font-bold'>JSW Steel</span>
+            <span className='px-2 text-slate-500'>|</span>
+            Dolvi, Navi Mumbai
           </p>
-          <p className="py-1 italic">Software Engineering Intern</p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>Implemented SEO strategies, including keyword optimization, on-page SEO, backlink building, and technical SEO, improving search rankings by 80%.</li>
-            <li>Developed and integrated interactive sections like forms, navigation menus, and chat windows, boosting user engagement by 40%.</li>
-            <li>Debugged and troubleshot issues, ensuring application performance and minimizing downtime.</li>
-            <li>Led backend integration and collaborated with a team of two developers to maintain seamless platform functionality.</li>
-          </ul>
-        </div>
-
-        {/* Experience: AI Prompt Engineering Intern */}
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold">Coditioning</span>
-            <span className="px-2">|</span>London, UK - Remote
+          <p className='py-1 text-slate-400'>
+            Assistant Manager — Technology Excellence · Jul 2025 – Present
           </p>
-          <p className="py-1 italic">AI Prompt Engineering Intern</p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>Generated gamified versions of DSA challenges and solutions in multiple programming languages.</li>
-            <li>Created technical content in the software engineering domain to support student learning, increasing subscriptions by 30%.</li>
-            <li>Conducted research and contributed to gamification of educational content, enhancing user engagement.</li>
-          </ul>
-        </div>
-
-        {/* Experience: ISTE */}
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold">ISTE Students’ Chapter NIT Durgapur</span>
-            <span className="px-2">|</span>Durgapur, India
-          </p>
-          <p className="py-1 italic">Web & Tech Head</p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed text-slate-400'>
             <li>
-              Developed various websites including{' '}
-              <a href="https://www.istenitdgp.com/" className="text-blue-500">
-                ISTE NIT Durgapur
-              </a>,{' '}
-              <a href="https://cit.istenitdgp.com/" className="text-blue-500">
-                CIT 7.0
-              </a>,{' '}
-              <a href="https://adventure-alcove.vercel.app/" className="text-blue-500">
-                Adventure-alcove
-              </a>, and more.
+              Analyzed production datasets from SAP and MES to identify
+              performance bottlenecks.
             </li>
-            <li>Led a team of 15 students, overseeing all aspects of web development projects from conception to deployment.</li>
+            <li>
+              Built KPI dashboards and automated reports for operational
+              analytics.
+            </li>
+            <li>
+              Performed RCA and data analysis to identify process gaps and
+              optimize workflows.
+            </li>
           </ul>
         </div>
 
-        {/* Education Section */}
-        <h5 className="text-center underline text-[18px] py-4">Education</h5>
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold">National Institute of Technology Durgapur</span>
-            <span className="px-2">|</span>Durgapur, India
+        <div className='py-6'>
+          <p>
+            <span className='font-bold'>Coditioning</span>
+            <span className='px-2 text-slate-500'>|</span>
+            London, UK — Remote
           </p>
-          <p className="py-1 italic">Bachelor of Technology in Metallurgical and Materials Engineering</p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>Coursework: Fundamentals of Algorithms, Data Structures, Introduction to Computing, Computer Networks</li>
+          <p className='py-1 text-slate-400'>
+            Software Development Intern · Oct 2024 – Jun 2025
+          </p>
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed text-slate-400'>
+            <li>
+              Built end-to-end web features using React.js, Next.js, TypeScript,
+              and CSS.
+            </li>
+            <li>
+              Migrated the codebase from React to Next.js with SSR, SSG, dynamic
+              metadata, and SEO.
+            </li>
+            <li>
+              Integrated Builder.io for dynamic content, contributing to an 80%
+              increase in search visibility.
+            </li>
+            <li>
+              Used Docker and AI-assisted tooling to review code and ship
+              reusable components.
+            </li>
+          </ul>
+        </div>
+
+        <div className='py-6'>
+          <p>
+            <span className='font-bold'>ISTE Students’ Chapter NIT Durgapur</span>
+            <span className='px-2 text-slate-500'>|</span>
+            Durgapur, India
+          </p>
+          <p className='py-1 text-slate-400'>
+            Web & Tech Head · Feb 2022 – May 2025
+          </p>
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed text-slate-400'>
+            <li>
+              Led a 15-member team to develop and deploy scalable web
+              applications for 5,000+ users.
+            </li>
+            <li>
+              Owned frontend performance, feature development, code integration,
+              and production releases.
+            </li>
+          </ul>
+        </div>
+
+        <h5 className='text-center text-accent font-mono text-xs uppercase tracking-[0.2em] py-4'>
+          Projects
+        </h5>
+        <div className='py-4 text-slate-400'>
+          <p>
+            <span className='font-bold text-white'>DevMatch</span> — Developer
+            matchmaking for interview prep, real-time interaction, and
+            engagement.{' '}
+            <a
+              href='https://devmatch.space/'
+              className='text-accent hover:underline'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Preview
+            </a>
+          </p>
+          <p className='pt-3'>
+            <span className='font-bold text-white'>JK-bros</span> — Logistics
+            platform with React, Firebase, and Node.js.{' '}
+            <a href='/#projects' className='text-accent hover:underline'>
+              Preview
+            </a>
+          </p>
+        </div>
+
+        <h5 className='text-center text-accent font-mono text-xs uppercase tracking-[0.2em] py-4'>
+          Education
+        </h5>
+        <div className='py-6'>
+          <p>
+            <span className='font-bold'>
+              National Institute of Technology Durgapur
+            </span>
+            <span className='px-2 text-slate-500'>|</span>
+            Durgapur, India
+          </p>
+          <p className='py-1 text-slate-400'>
+            Bachelor of Technology in Metallurgical and Materials Engineering ·
+            May 2025
+          </p>
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed text-slate-400'>
+            <li>
+              Coursework: Data Structures and Algorithms, Compiler Design,
+              Computer Networks
+            </li>
             <li>Organizations: Indian Society for Technical Education (ISTE)</li>
           </ul>
         </div>

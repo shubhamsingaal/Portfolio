@@ -1,20 +1,24 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { motion } from 'framer-motion';
+import ProfilePhoto from './ProfilePhoto';
 
-// import { useRouter } from 'next/router';
-import NavLogo from '../public/assets/navLogo.jpeg'
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/resume', label: 'Resume' },
+  { href: '/#contact', label: 'Contact' },
+];
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState('#ecf0f3');
-  const [linkColor, setLinkColor] = useState('#1f2937');
-
 
   const handleNav = () => {
     setNav(!nav);
@@ -22,156 +26,115 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleShadow = () => {
-      if (window.scrollY >= 90) {
-        setShadow(true);
-      } else {
-        setShadow(false);
-      }
+      setShadow(window.scrollY >= 40);
     };
     window.addEventListener('scroll', handleShadow);
+    return () => window.removeEventListener('scroll', handleShadow);
   }, []);
 
   return (
-    <motion.div
+    <motion.header
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ type: 'spring', stiffness: 120, duration: 0.7, delay: 1.2 }}
-      style={{ backgroundColor: `${navBg}` }}
+      transition={{ type: 'spring', stiffness: 120, duration: 0.7 }}
       className={
         shadow
-          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
-          : 'fixed w-full h-20 z-[100]'
+          ? 'fixed w-full h-16 sm:h-20 z-[100] bg-ink-950/85 backdrop-blur-md border-b border-white/10'
+          : 'fixed w-full h-16 sm:h-20 z-[100] bg-ink-950/40 backdrop-blur-sm'
       }
     >
-      <div className='flex justify-between items-center w-full h-full px-5  2xl:px-16'>
+      <div className='flex justify-between items-center w-full h-full page-wrap 2xl:max-w-none 2xl:px-12'>
         <Link href='/'>
-          <a>
-            <Image
-              src={NavLogo}
-              alt='/'
-              width='47'
-              height='47'
-              className='cursor-pointer  rounded-3xl '
-            />
+          <a className='flex items-center gap-3 group'>
+            <ProfilePhoto size='nav' ring className='group-hover:opacity-90' />
+            <span className='hidden sm:flex flex-col leading-tight'>
+              <span className='text-sm font-semibold text-white tracking-wide'>
+                Shubham Kumar
+              </span>
+              <span className='font-mono text-[10px] uppercase tracking-[0.18em] text-accent'>
+                Full-Stack Engineer
+              </span>
+            </span>
           </a>
         </Link>
         <div>
-          <ul style={{ color: `${linkColor}` }} className='hidden md:flex'>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/'>Home</Link>
-            </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/#about'>About</Link>
-            </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/#skills'>Skills</Link>
-            </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/#projects'>Projects</Link>
-            </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/resume'>Resume</Link>
-            </li>
-            <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/#contact'>Contact</Link>
-            </li>
+          <ul className='hidden lg:flex items-center'>
+            {navLinks.map((link) => (
+              <li
+                key={link.href}
+                className='ml-5 xl:ml-7 text-[11px] font-medium uppercase tracking-[0.14em] text-slate-300 hover:text-accent list-none'
+              >
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
           </ul>
-          {/* Hamburger Icon */}
-          <div
-            style={{ color: `${linkColor}` }}
+          <button
+            type='button'
             onClick={handleNav}
-            className='md:hidden'
+            className='lg:hidden text-slate-100 p-2'
+            aria-label='Open menu'
           >
-            <AiOutlineMenu size={25} />
-          </div>
+            <AiOutlineMenu size={22} />
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {/* Overlay */}
       <div
         className={
-          nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
+          nav
+            ? 'lg:hidden fixed left-0 top-0 w-full h-screen bg-black/70 z-[110]'
+            : 'hidden'
         }
       >
-        {/* Side Drawer Menu */}
-        <div
-          className={
-            nav
-              ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
-              : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
-          }
-        >
+        <div className='fixed left-0 top-0 w-[82%] max-w-sm h-screen bg-ink-900 p-8 border-r border-white/10 overflow-y-auto'>
           <div>
             <div className='flex w-full items-center justify-between'>
               <Link href='/'>
-                <a>
-                  <Image
-                    src={NavLogo}
-                    width='47'
-                    height='47'
-                    alt='/'
-                    className='rounded-3xl'
-                  />
+                <a onClick={() => setNav(false)} className='flex items-center gap-3'>
+                  <ProfilePhoto size='nav' ring />
+                  <span className='text-sm font-semibold text-white'>
+                    Shubham Kumar
+                  </span>
                 </a>
               </Link>
-              <div
+              <button
+                type='button'
                 onClick={handleNav}
-                className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'
+                className='rounded-full border border-white/10 p-3 cursor-pointer hover:border-accent/50'
+                aria-label='Close menu'
               >
                 <AiOutlineClose />
-              </div>
+              </button>
             </div>
-            <div className='border-b border-gray-300 my-4'>
-              <p className='w-[85%] md:w-[90%] py-4'>
-                Let&#39;s build something legendary together
+            <div className='border-b border-white/10 my-4'>
+              <p className='w-[90%] py-4 text-slate-400 text-sm'>
+                Building products that recruiters and users both notice.
               </p>
             </div>
           </div>
-          <div className='py-4 flex flex-col'>
+          <div className='py-2 flex flex-col'>
             <ul className='uppercase'>
-              <Link href='/'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                  Home
+              {navLinks.map((link) => (
+                <li
+                  key={link.href}
+                  onClick={() => setNav(false)}
+                  className='py-3.5 text-sm tracking-[0.16em] text-slate-200 list-none'
+                >
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
-              </Link>
-              <Link href='/#about'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                  About
-                </li>
-              </Link>
-              <Link href='/#skills'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                  Skills
-                </li>
-              </Link>
-              <Link href='/#projects'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                  Projects
-                </li>
-              </Link>
-              <Link href='/resume'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                  Resume
-                </li>
-              </Link>
-              <Link href='/#contact'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                  Contact
-                </li>
-              </Link>
+              ))}
             </ul>
-            <div className='pt-40'>
-              <p className='uppercase tracking-widest text-[#5651e5]'>
+            <div className='pt-16'>
+              <p className='uppercase tracking-widest text-accent font-mono text-xs'>
                 Let&#39;s Connect
               </p>
-              <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
+              <div className='flex items-center gap-3 my-4'>
                 <a
                   href='https://www.linkedin.com/in/shubhamsingaal/'
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                  <div className='icon-btn'>
                     <FaLinkedinIn />
                   </div>
                 </a>
@@ -180,32 +143,30 @@ const Navbar = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                  <div className='icon-btn'>
                     <FaGithub />
                   </div>
                 </a>
                 <Link href='/#contact'>
-                  <div
-                    onClick={() => setNav(!nav)}
-                    className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'
-                  >
-                    <AiOutlineMail />
-                  </div>
+                  <a onClick={() => setNav(false)}>
+                    <div className='icon-btn'>
+                      <AiOutlineMail />
+                    </div>
+                  </a>
                 </Link>
                 <Link href='/resume'>
-                  <div
-                    onClick={() => setNav(!nav)}
-                    className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'
-                  >
-                    <BsFillPersonLinesFill />
-                  </div>
+                  <a onClick={() => setNav(false)}>
+                    <div className='icon-btn'>
+                      <BsFillPersonLinesFill />
+                    </div>
+                  </a>
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.header>
   );
 };
 

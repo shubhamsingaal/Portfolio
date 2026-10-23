@@ -1,67 +1,111 @@
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import Image from 'next/image';
-import React, { useEffect } from 'react';
-import Html from '../public/assets/skills/html.png';
-import Css from '../public/assets/skills/css.png';
-import Javascript from '../public/assets/skills/javascript.png';
-import ReactImg from '../public/assets/skills/react.png';
-import Tailwind from '../public/assets/skills/tailwind.png';
-import Github from '../public/assets/skills/github1.png';
-import Firebase from '../public/assets/skills/firebase.png';
-import NextJS from '../public/assets/skills/nextjs.png';
-import AWS from '../public/assets/skills/aws.png';
+import { motion } from 'framer-motion';
+import React from 'react';
+import {
+  SiC,
+  SiCplusplus,
+  SiCss3,
+  SiDocker,
+  SiExpress,
+  SiFirebase,
+  SiGithub,
+  SiGithubactions,
+  SiGoogleanalytics,
+  SiHtml5,
+  SiJavascript,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+} from 'react-icons/si';
+import { FaDatabase, FaSearch } from 'react-icons/fa';
+import { AiOutlineApi } from 'react-icons/ai';
 
-const SkillCard = ({ image, alt, title }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true });
+const groups = [
+  {
+    label: 'Languages',
+    items: [
+      { title: 'JavaScript', icon: SiJavascript },
+      { title: 'TypeScript', icon: SiTypescript },
+      { title: 'C', icon: SiC },
+      { title: 'C++', icon: SiCplusplus },
+      { title: 'SQL', icon: FaDatabase },
+      { title: 'HTML', icon: SiHtml5 },
+      { title: 'CSS', icon: SiCss3 },
+    ],
+  },
+  {
+    label: 'Frameworks & Databases',
+    items: [
+      { title: 'React.js', icon: SiReact },
+      { title: 'Next.js', icon: SiNextdotjs },
+      { title: 'Node.js', icon: SiNodedotjs },
+      { title: 'Express.js', icon: SiExpress },
+      { title: 'Tailwind CSS', icon: SiTailwindcss },
+      { title: 'PostgreSQL', icon: SiPostgresql },
+      { title: 'Firebase', icon: SiFirebase },
+      { title: 'MySQL', icon: SiMysql },
+    ],
+  },
+  {
+    label: 'Tools & Other',
+    items: [
+      { title: 'Docker', icon: SiDocker },
+      { title: 'Git / GitHub', icon: SiGithub },
+      { title: 'GitHub Actions', icon: SiGithubactions },
+      { title: 'REST APIs', icon: AiOutlineApi },
+      { title: 'SEO', icon: FaSearch },
+      { title: 'Google Analytics', icon: SiGoogleanalytics },
+    ],
+  },
+];
 
-  useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 0 }}
-      animate={controls}
-      transition={{ duration: 2 }}
-      className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'
-    >
-      <div className='grid grid-cols-2 gap-4 justify-center items-center'>
-        <div className='m-auto'>
-          <Image src={image} width='64px' height='64px' alt={alt} />
-        </div>
-        <div className='flex flex-col items-center justify-center'>
-          <h3>{title}</h3>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+const SkillCard = ({ icon: Icon, title, delay }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.35, delay }}
+    className='surface px-3 py-3 flex items-center gap-3 hover:border-accent/40 hover:shadow-glow transition min-h-[56px]'
+  >
+    <span className='flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-accent text-lg'>
+      <Icon />
+    </span>
+    <h3 className='text-sm font-medium text-slate-100 leading-tight'>{title}</h3>
+  </motion.div>
+);
 
 const Skills = () => {
   return (
-    <div id='skills' className='w-full lg:h-screen p-2'>
-      <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
-        <p className='text-xl tracking-widest uppercase text-[#5651e5]'>
-          Skills
+    <section id='skills' className='w-full section-pad'>
+      <div className='page-wrap'>
+        <p className='section-kicker'>Skills</p>
+        <h2 className='py-3'>The stack I work in</h2>
+        <p className='text-slate-400 max-w-2xl mb-8'>
+          Languages, frameworks, databases, and tooling I use to ship and
+          measure products.
         </p>
-        <h2 className='py-4'>What I Can Do</h2>
-        <div className='grid grid-cols-2 lg:grid-cols-4 gap-8'>
-          <SkillCard image={Html} alt='HTML' title='HTML' />
-          <SkillCard image={Css} alt='CSS' title='CSS' />
-          <SkillCard image={Javascript} alt='JavaScript' title='JavaScript' />
-          <SkillCard image={ReactImg} alt='React' title='React' />
-          <SkillCard image={Tailwind} alt='Tailwind' title='Tailwind' />
-          <SkillCard image={Firebase} alt='Firebase' title='Firebase' />
-          <SkillCard image={Github} alt='Github' title='Github' />
-          <SkillCard image={NextJS} alt='Next' title='Next' />
-        </div>
+        {groups.map((group) => (
+          <div key={group.label} className='mb-8 last:mb-0'>
+            <p className='font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-3'>
+              {group.label}
+            </p>
+            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3'>
+              {group.items.map((skill, i) => (
+                <SkillCard
+                  key={skill.title}
+                  icon={skill.icon}
+                  title={skill.title}
+                  delay={i * 0.03}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

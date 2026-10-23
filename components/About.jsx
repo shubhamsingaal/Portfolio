@@ -1,106 +1,86 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
-import { motion, useAnimation } from 'framer-motion'; // Import motion from Framer Motion
-import AboutImg from '../public/assets/profile.jpg';
+import { motion } from 'framer-motion';
+import ProfilePhoto from './ProfilePhoto';
+
+const highlights = [
+  { value: 'NIT Durgapur', label: 'B.Tech, 2025' },
+  { value: 'JSW Steel', label: 'Technology Excellence' },
+  { value: '~80%', label: 'Search visibility lift' },
+  { value: '5,000+', label: 'Students reached' },
+];
 
 const About = () => {
-  const [isInView, setIsInView] = useState(false);
-  const controls = useAnimation();
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const itemVariants = {
-    hidden: { x: 0, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
-  };
-  const imageVariants = {
-    hidden: { x: 0, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const element = document.getElementById('about');
-      if (element) {
-        const elementOffset = element.offsetTop;
-        const elementHeight = element.clientHeight;
-        const elementInView = scrollY >= elementOffset - window.innerHeight / 2 && scrollY <= elementOffset + elementHeight / 2;
-        if (elementInView) {
-          setIsInView(true);
-        }
-      }
-    };
-
-    controls.start(isInView ? 'visible' : 'hidden');
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isInView, controls]);
-
   return (
-    <motion.div
+    <motion.section
       id='about'
-      className='w-full md:h-screen p-2 flex items-center py-16'
-      initial='hidden'
-      animate={controls}
-      variants={containerVariants}
+      className='w-full section-pad'
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6 }}
     >
-      <motion.div
-        className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'
-        variants={containerVariants}
-      >
-        <motion.div
-          className='col-span-2'
-          variants={itemVariants}
-        >
-          <p className='uppercase text-xl tracking-widest text-[#5651e5]'>
-            About
+      <div className='page-wrap grid md:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-center'>
+        <div>
+          <p className='section-kicker'>About</p>
+          <h2 className='py-3'>Who I am</h2>
+          <p className='py-2 text-slate-400 leading-relaxed'>
+            I&#39;m a product-focused full-stack engineer from NIT Durgapur. I
+            turn messy operational problems into clean web products —
+            dashboards, matchmaking flows, and fast sites that actually rank.
           </p>
-          <h2 className='py-4'>Who I Am</h2>
-          <p className='py-2 text-gray-600'>
-            A dedicated and highly motivated undergraduate student eager to learn and work on different tech stacks. As an avid
-            learner, I have always been passionate about problem-solving. I am broadening my horizons by learning and exploring
-            the MERN Stack. I am always enthusiastic about taking on new challenges and believe in continuous learning and
-            growth.
+          <p className='py-2 text-slate-400 leading-relaxed'>
+            At JSW Steel I work on technology excellence: SAP/MES production
+            data, KPI dashboards, RCA, and cross-functional system improvements.
+            Before that I interned at Coditioning, migrating a React codebase to
+            Next.js with SSR/SSG, SEO, and Builder.io.
           </p>
-          <p className='py-2 text-gray-600'>
-            I specialize in building mobile responsive front-end UI applications
-            that connect with API’s and other backend technologies. I’m
-            passionate about learning new technologies and understand there is
-            more than one way to accomplish a task. Though I am most proficient
-            in building front-end applications using HTML, CSS, Javascript,
-            React and Next. I am a quick learner and can pick up new tech stacks as
-            needed. I believe that being a great developer is not using one
-            specific language, but choosing the best tool for the job.
-          </p>
-          <p className='py-2 text-gray-600'>
-
+          <p className='py-2 text-slate-400 leading-relaxed'>
+            I also founded{' '}
+            <a
+              href='https://devmatch.space/'
+              target='_blank'
+              rel='noreferrer'
+              className='text-accent hover:underline'
+            >
+              DevMatch
+            </a>
+            , a developer matchmaking platform for interview practice, real-time
+            chat, mocks, and accountability.
           </p>
           <Link href='/#projects'>
-            <motion.p
-              className='py-2 text-gray-600 underline cursor-pointer'
-              variants={itemVariants}
-            >
-              Check out some of my latest projects.
-            </motion.p>
+            <a className='inline-block pt-4 text-accent hover:underline'>
+              Check out some of my latest projects →
+            </a>
           </Link>
-        </motion.div>
-        <motion.div
-          className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'
-          variants={imageVariants}
-        >
-          <Image src={AboutImg} className='rounded-xl' alt='/' />
-        </motion.div>
-      </motion.div>
-    </motion.div>
+        </div>
+
+        <div className='surface p-6 sm:p-7'>
+          <div className='flex items-center gap-4 mb-6'>
+            <ProfilePhoto size='sm' ring />
+            <div>
+              <p className='text-white font-semibold'>Shubham Kumar</p>
+              <p className='text-sm text-slate-400'>Full-Stack Engineer</p>
+            </div>
+          </div>
+          <div className='grid grid-cols-2 gap-3'>
+            {highlights.map((item) => (
+              <div
+                key={item.label}
+                className='rounded-xl border border-white/10 bg-ink-950/60 px-3 py-4'
+              >
+                <p className='text-white font-semibold text-sm sm:text-base leading-tight'>
+                  {item.value}
+                </p>
+                <p className='mt-1 font-mono text-[10px] uppercase tracking-wider text-slate-400'>
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.section>
   );
 };
 

@@ -2,36 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 html {
   scroll-behavior: smooth;
-  font-family: 'Raleway', sans-serif;
 }
 
 @layer base {
+  html,
   body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
+    @apply overflow-x-hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold
+  body {
+    @apply bg-ink-950 text-slate-200 font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold text-white tracking-tight;
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway]
+    @apply text-[2.15rem] leading-[1.12] sm:text-5xl lg:text-6xl;
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl
-  }
-  
-  li {
-    @apply cursor-pointer
+    @apply text-2xl sm:text-3xl lg:text-4xl;
   }
 
   button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white
+    @apply rounded-xl;
+  }
+}
+
+@layer components {
+  .page-wrap {
+    @apply max-w-[1120px] w-full mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-kicker {
+    @apply font-mono text-[11px] tracking-[0.28em] uppercase text-accent;
+  }
+
+  .surface {
+    @apply bg-ink-800/80 border border-white/10 rounded-2xl shadow-card backdrop-blur-sm;
+  }
+
+  .icon-btn {
+    @apply rounded-full border border-white/10 bg-ink-800 p-3.5 cursor-pointer text-slate-200 hover:text-accent hover:border-accent/40 hover:shadow-glow hover:scale-105 ease-in duration-300;
   }
 }

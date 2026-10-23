@@ -22,6 +22,7 @@ const items = [
     title: 'Jk-Bros | Logistics',
     backgroundImg: jkbrosImg,
     projectUrl: '/jkbros',
+    liveUrl: 'https://jk-bros-netlify.netlify.app/',
     tech: 'React · Firebase · Node.js',
     summary:
       'Logistics web app for intra- and intercity delivery — auth, data, and ops flows on Firebase.',
@@ -30,6 +31,7 @@ const items = [
     title: 'CIT | ISTE',
     backgroundImg: citImg,
     projectUrl: '/cit',
+    liveUrl: 'https://cit.istenitdgp.com/',
     tech: 'Next.js',
     summary:
       'Technical-fest platform for ISTE NIT Durgapur — event pages, registration, and production deploys.',
@@ -38,6 +40,7 @@ const items = [
     title: 'Auditions App',
     backgroundImg: auditionsImg,
     projectUrl: '/auditions',
+    liveUrl: 'https://iste-auditions-2023.vercel.app/',
     tech: 'JavaScript',
     summary:
       'Campus auditions workflow so clubs can collect, review, and manage applicant rounds.',
@@ -46,6 +49,7 @@ const items = [
     title: 'Panorama',
     backgroundImg: panoramaImg,
     projectUrl: '/panorama',
+    liveUrl: 'https://space-odyssey-game.vercel.app/',
     tech: 'React',
     summary:
       'Interactive React front-end for campus-scale content and event discovery.',

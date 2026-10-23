@@ -3,6 +3,7 @@ import React from 'react';
 import devmatchImg from '../public/assets/projects/devmatch.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import ProjectStory from '../components/ProjectStory';
 
 const DevMatch = () => {
   return (
@@ -26,30 +27,17 @@ const DevMatch = () => {
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8 px-4'>
         <div className='col-span-4'>
           <p className='section-kicker'>Project</p>
-          <h2 className='py-2'>Overview</h2>
+          <h2 className='py-2'>A better way to prepare together</h2>
           <p className='text-slate-400 leading-relaxed'>
-            DevMatch is a developer matchmaking platform I founded and shipped
-            at{' '}
-            <a
-              href='https://devmatch.space/'
-              target='_blank'
-              rel='noreferrer'
-              className='text-accent hover:underline'
-            >
-              devmatch.space
-            </a>
-            . It pairs engineers at a similar skill level and timezone so they
-            can mock interview, swap feedback, and stay accountable — instead of
-            grinding LeetCode alone.
+            I founded and shipped DevMatch, a live platform that pairs
+            developers at similar skill levels and time zones for interview
+            practice.
           </p>
-          <p className='text-slate-400 leading-relaxed py-4'>
-            I defined the core product: profiles, swipe-to-match, real-time
-            chat, mock scheduling, progress tracking, study groups, and a live
-            co-solve editor. Homepage stats are pulled from the live database
-            rather than marketing numbers. The goal was engagement and usability
-            — a product that feels indie, honest, and actually useful during
-            interview season.
-          </p>
+          <ProjectStory
+            challenge='Interview preparation can be isolating. Developers need a way to find peers, practice together, and stay accountable.'
+            approach='Built profiles, swipe-to-match, real-time chat, mock-session scheduling, progress tracking, study groups, and a live co-solve editor.'
+            outcome='The platform is live at devmatch.space. Its homepage displays product statistics from the live database.'
+          />
           <a
             href='https://devmatch.space/'
             target='_blank'

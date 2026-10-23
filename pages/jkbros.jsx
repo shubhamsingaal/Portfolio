@@ -3,6 +3,7 @@ import React from 'react';
 import jkbrosImg from '../public/assets/projects/jkbros.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import ProjectStory from '../components/ProjectStory';
 
 const jkbros = () => {
   return (
@@ -24,14 +25,17 @@ const jkbros = () => {
 
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
-          <p>Project</p>
-          <h2>Overview</h2>
-          <p>
-            JK-Bros is a technology-driven logistics firm providing seamless
-            intracity and intercity delivery solutions. Built with React for
-            dynamic interfaces, Tailwind CSS for responsive styling, Firebase
-            for data, and Node.js on the server.
+          <p className='section-kicker'>Project</p>
+          <h2 className='py-2'>A digital platform for delivery operations</h2>
+          <p className='text-slate-400 leading-relaxed'>
+            JK-Bros provides intracity and intercity delivery services. This
+            project brings its logistics offering to a web platform.
           </p>
+          <ProjectStory
+            challenge='Support a logistics business serving both local and intercity delivery needs with a clear online experience.'
+            approach='Built the platform with React and Tailwind CSS, using Firebase for data and Node.js on the server.'
+            outcome='Delivered a live logistics platform with both a public demo and source code available.'
+          />
           <a
             href='https://github.com/shubhamsingaal/JK-bross'
             target='_blank'

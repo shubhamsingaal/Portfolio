@@ -3,6 +3,7 @@ import React from 'react';
 import auditionsImg from '../public/assets/projects/auditions.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import ProjectStory from '../components/ProjectStory';
 
 const auditions = () => {
   return (
@@ -24,13 +25,18 @@ const auditions = () => {
 
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
-          <p>Project</p>
-          <h2>Overview</h2>
-          <p>
-            Designed a cutting-edge auditions website that seamlessly streamlines the audition process,
-            utilizing advanced web development skills. This platform has successfully attracted over 1500+ students, offering
-            them a user-friendly and efficient experience for their auditions. It is available in both dark and light mode.
+          <p className='section-kicker'>Project</p>
+          <h2 className='py-2'>A simpler audition experience for campus</h2>
+          <p className='text-slate-400 leading-relaxed'>
+            The Auditions App gives students a single place to take part in
+            campus auditions, with an interface designed to work in both dark
+            and light themes.
           </p>
+          <ProjectStory
+            challenge='Make the audition process easier to access and manage for a large campus community.'
+            approach='Built a web app with JavaScript and CSS, backed by MongoDB, and included dark and light themes.'
+            outcome='The platform has attracted more than 1,500 students.'
+          />
           <a
             href='https://github.com/shubhamsingaal/ISTE-Auditions-2023'
             target='_blank'

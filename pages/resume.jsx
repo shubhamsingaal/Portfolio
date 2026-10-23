@@ -185,9 +185,14 @@ const Resume = () => {
           <p className='pt-3'>
             <span className='font-bold text-white'>JK-bros</span> — Logistics
             platform with React, Firebase, and Node.js.{' '}
-            <Link href='/#projects'>
-              <a className='text-accent hover:underline'>Preview</a>
-            </Link>
+            <a
+              href='https://jk-bros-netlify.netlify.app/'
+              className='text-accent hover:underline'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Preview
+            </a>
           </p>
         </div>
 

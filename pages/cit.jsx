@@ -3,6 +3,7 @@ import React from "react";
 import citImg from "../public/assets/projects/cit.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
+import ProjectStory from "../components/ProjectStory";
 
 const cit = () => {
   return (
@@ -17,27 +18,25 @@ const cit = () => {
           alt="/"
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-          <h2 className="py-2">CIT - Coginitive Intelligence Test</h2>
+          <h2 className="py-2">CIT - Cognitive Intelligence Test</h2>
           <h3>Next JS / Django / Sql</h3>
         </div>
       </div>
 
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8">
         <div className="col-span-4">
-          <p>Project</p>
-          <h2>Overview</h2>
-          <p>
-            The starting of college life was a turmoil, tons of events and
-            classes and a race for survival where a minute&apos;s denial can lead to
-            unfortunate consequences in a stampede. To every parents question
-            which goes like, &quot;Kya? Kuch soche ho?&quot;, we remain unanswerable. Torn
-            between the scopes that engineering provides us, we all do deserve a
-            trailer, a guide to what those competitive exams look like! ISTE
-            Students&apos; Chapter NIT Durgapur, presents you the seventh edition of
-            its Annual Flagship Event, a journey to explore the &quot;what-ifs&quot; of
-            your career. Take a venture around the complexities of exams like
-            CAT and unleash your intelligence in COGNITIVE INTELLIGENCE TEST 7.0
+          <p className="section-kicker">Project</p>
+          <h2 className="py-2">A digital home for ISTE&apos;s flagship event</h2>
+          <p className="text-slate-400 leading-relaxed">
+            Cognitive Intelligence Test 7.0 was the seventh edition of ISTE
+            Students&apos; Chapter NIT Durgapur&apos;s annual flagship event, focused on
+            exploring competitive exams such as CAT.
           </p>
+          <ProjectStory
+            challenge="Help students discover and engage with the event amid the busy transition into college life."
+            approach="Built the event website with Next.js, Django, Firebase, and SQL, with a focus on presenting the event and its exam-oriented experience."
+            outcome="The event site is live, and its source code is available to explore."
+          />
           <a
             href="https://github.com/shubhamsingaal/stcit-5"
             target="_blank"

@@ -3,6 +3,7 @@ import React from 'react';
 import panoramaImg from '../public/assets/projects/panorama.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
+import ProjectStory from '../components/ProjectStory';
 
 const panorama = () => {
   return (
@@ -24,13 +25,17 @@ const panorama = () => {
 
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
-          <p>Project</p>
-          <h2>Overview</h2>
-          <p>
-            Successfully developed a feature-rich quiz website utilizing ReactJS and Firebase, achieving exceptional results. This project attracted an impressive 500+ participants. With the inclusion of time-limit quizzes and
-            topic-specific categories, user engagement soared, and the competitive spirit among users led to a remarkable 40%
-            increase in participation, creating an immersive and engaging experience.
+          <p className='section-kicker'>Project</p>
+          <h2 className='py-2'>A more engaging campus quiz</h2>
+          <p className='text-slate-400 leading-relaxed'>
+            Panorama is a React quiz experience built around timed challenges
+            and topic-specific categories.
           </p>
+          <ProjectStory
+            challenge='Keep quiz participants engaged with an experience that feels focused and competitive.'
+            approach='Built a React quiz site with Firebase, timed quizzes, and topic-specific categories.'
+            outcome='The project attracted more than 500 participants, with a reported 40% increase in participation.'
+          />
           <a
             href='https://space-odyssey-game.vercel.app/'
             target='_blank'

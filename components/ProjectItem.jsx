@@ -30,7 +30,7 @@ const ProjectItem = ({
         <Image
           className='object-cover object-top group-hover:scale-105 transition duration-500'
           src={backgroundImg}
-          alt={title}
+          alt={`Screenshot of ${title}`}
           layout='fill'
         />
         <div className='absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/25 to-transparent' />

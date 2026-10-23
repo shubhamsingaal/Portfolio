@@ -22,7 +22,7 @@ const jkbros = () => {
           layout='fill'
           objectFit='cover'
           src={jkbrosImg}
-          alt='/'
+          alt='Screenshot of the JK-Bros logistics platform'
         />
         <div className='absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2'>
           <h2 className='py-2'>JK-Bros | Logistics</h2>
